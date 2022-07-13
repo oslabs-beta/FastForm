@@ -1,6 +1,6 @@
 {
-  "name": "svorm",
-  "version": "0.0.1",
+  "name": "@fastform/form",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -11,12 +11,14 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "package": "svelte-kit package",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-svelte-csf": "^2.0.5",
     "@storybook/builder-vite": "^0.1.39",
     "@storybook/svelte": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
@@ -27,10 +29,12 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "svelte": "^3.49.0",
     "svelte-loader": "^3.1.3",
+    "svelte2tsx": "^0.5.11",
     "vite": "^2.9.13"
   },
-  "type": "module",
-  "dependencies": {
-    "@storybook/addon-svelte-csf": "^2.0.5"
-  }
+  "exports": {
+    "./package.json": "./package.json",
+    "./Button.svelte": "./Button/Button.svelte"
+  },
+  "type": "module"
 }
