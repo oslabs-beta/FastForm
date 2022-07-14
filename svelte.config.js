@@ -4,7 +4,7 @@ import adapter from '@sveltejs/adapter-auto';
 const config = {
 	kit: {
     package: {
-      exports: (filepath) => !/./.test(filepath)
+      exports: () => false
     },
 		adapter: adapter()
 	}
