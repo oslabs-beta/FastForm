@@ -5,18 +5,7 @@ import { writable } from 'svelte/store';
 <input name='name' bind:value={$form.name}/>
 <input name='email' bind:value={$form.email}/> */
 export const formStore = writable({
-    values: {
-        first_name: '',
-        last_name: '',
-        birthDate: '',
-        gender: '',
-        team: '',
-        income: 0,
-        rating: 0,
-        fruits: [], 
-        email: ''
-
-    },
+    values: {},
     errors: {
         // first_name: {
         //     required: 
