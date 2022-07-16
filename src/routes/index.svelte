@@ -2,7 +2,7 @@
   //@ts-ignore
   import FastForm from "$lib/FastForm/FastForm.svelte"
  /*  import Field from '$lib/Field/Field.svelte' */
-
+  // import Field from '../lib/Field/Field.svelte'
   let initValues = {
     name: 'Griffin',
     email: 'griffinbrlw@gmail.com'

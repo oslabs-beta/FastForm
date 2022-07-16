@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-  import { form } from '../store.js';
+  import { formStore } from '../store.ts';
   //IMPORT ALL COMPONENTS BELOW
   import Text from './Text.svelte';
   import Radio from './Radio.svelte'
