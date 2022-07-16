@@ -1,10 +1,10 @@
 <script>
-    import { form } from '../store.js'
+    import { formStore } from '../store.js'
     export let initValues;
     export let handleSubmit;
 
-    form.set({...initValues})
+    $formStore.values = {...initValues}
 </script>
-<form on:submit|preventDefault={handleSubmit($form)} >
+<form on:submit|preventDefault={handleSubmit($formStore)} >
     <slot></slot>
 </form>
