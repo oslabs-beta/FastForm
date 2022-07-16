@@ -3,7 +3,7 @@
     export let initValues;
     export let handleSubmit;
 
-    $formStore.set({...initValues})
+    $formStore.values = {...initValues}
 </script>
 <form on:submit|preventDefault={handleSubmit($formStore)} >
     <slot></slot>
