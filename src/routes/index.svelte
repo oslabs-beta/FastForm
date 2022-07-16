@@ -1,6 +1,7 @@
 <script>
-  import FastForm from '../lib/FastForm/Fastform.svelte'
-  import Field from '../lib/Field/Field.svelte'
+  //@ts-ignore
+  import FastForm from "$lib/FastForm/FastForm.svelte"
+ /*  import Field from '$lib/Field/Field.svelte' */
 
   let initValues = {
     name: 'Griffin',
