@@ -40,7 +40,8 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    "./Button.svelte": "./Button/Button.svelte"
+    "./Button.svelte": "./Button/Button.svelte",
+    "./validators": "./validators"
   },
   "type": "module"
 }

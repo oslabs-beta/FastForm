@@ -1,6 +1,6 @@
 import { formStore } from '$lib/store.ts';
 
-export function required(value) {
+export default function required(value) {
   let newStore
   formStore.subscribe(store => {
     newStore = store; 
