@@ -1,4 +1,4 @@
-import { formStore } from '$lib/store.js';
+import { formStore } from '$lib/store.ts';
 
 export function required(value) {
   let newStore
