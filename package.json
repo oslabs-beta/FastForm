@@ -40,7 +40,9 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    "./Button.svelte": "./Button/Button.svelte"
+    "./store.js": "./store.js",
+    "./FastForm.svelte": "./FastForm/FastForm.svelte",
+    "./Field.svelte": "./Field/Field.svelte"
   },
   "type": "module"
 }
