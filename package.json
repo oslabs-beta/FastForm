@@ -40,7 +40,7 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    "./validators": "./validators"
+    "./validators": "./validators",
     "./store.js": "./store.js",
     "./FastForm.svelte": "./FastForm/FastForm.svelte",
     "./Field.svelte": "./Field/Field.svelte"
