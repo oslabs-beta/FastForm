@@ -1,29 +1,52 @@
-<script>
-// @ts-nocheck
-  import { formStore } from '../store.ts';
-  //IMPORT ALL COMPONENTS BELOW
-  import Text from './Text.svelte';
-  import Radio from './Radio.svelte'
-  
-  //$$props stores all props that were passed down to this component
-  const {type} = $$props;
+<script lang="ts">
+  // import { formStore } from '../store.ts';
 
-  //typeSelect is all the types that user can input and are available on FastForm
-  const typeSelect = {
-    text: Text,
-    radio: Radio,
-    email: Text
-  }
-  const renderDom = typeSelect[type]
+  //IMPORT ALL COMPONENTS BELOW
+  import Input from './Input.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  // import Radio from './Radio.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  // import Checkbox from './CheckBox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  // import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  
+
+  //check the type of this Field element through props.  
+  export let type:string;
+
+  //typeSelect is all the input types that user can input and are available on FastForm
+  const typeSelect:any = {
+    text: Input,
+    email: Input,
+    color: Input,
+    number: Input, 
+    password: Input, //minlength option
+    tel: Input, //pattern option
+    button: Input, //value required
+    date: Input, //min/max option
+    'datetime-local': Input, //min/max option
+    file: Input, //accept types option
+    hidden: Input,
+    image: Input,
+    month: Input, //min option
+    reset: Input,
+    search: Input,
+    submit: Input,
+    time: Input,
+    url: Input,
+    week: Input,
+    // radio: Radio,
+    // checkbox: Checkbox,
+    // select: Select,
+    // range: Range,
+  };
+
+  const renderDom:JSX.Element = typeSelect[type];
+
 </script>
+
 <!-- use svelte:component to dynamically choose the correct component,
 we pass in all the props directly to the component -->
 <svelte:component this={renderDom} {...$$props}/>
 
-
-<!-- BELOW FOR REFERENCE ONLY CAN BE DELETED -->
-<!-- <input name={name} bind:value={$form[name]} />  --> 
-<!-- <Field type='radio' name= 'Sex' value = {['Male', 'Female']} />  -->
 
 
 
