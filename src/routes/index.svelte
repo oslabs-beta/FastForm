@@ -15,6 +15,6 @@
 
 <FastForm initValues={initValues} handleSubmit={handleSubmit}>
   <Field name='icecream' type='checkbox' values={['1', '2', '3']}/>
-  <Select name='' values={['1', '2', '3']} />
+  <Field name='' type='select' values={['1', '2', '3']} />
   <button type='submit'>Submit!</button>
 </FastForm>
