@@ -1,9 +1,10 @@
 <script>
 
   import { formStore } from '$lib/store';
-
+  export let type;
   export let values;
   export let name;
+
 </script>
 
 {#each values as value }
