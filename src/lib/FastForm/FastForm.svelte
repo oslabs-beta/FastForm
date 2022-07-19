@@ -13,6 +13,7 @@
     }
 
 </script>
+
 <form on:submit|preventDefault={onSubmit}>
     <slot></slot>
 </form>
