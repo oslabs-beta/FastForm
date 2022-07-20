@@ -1,17 +1,12 @@
-import { formStore } from '$lib/store.js';
-
-export default function mustMatch<T>(value : T, valueToMatch : T) {
-    let newStore : any;
-        formStore.subscribe((store: any) => {
-        newStore = store;
-    });
-
-    if (newStore.values[value] !== newStore.values[valueToMatch]) {
-        newStore.errors[value] ??= {}
-        newStore.errors[value]['mustMatch'] = `Error. ${value} must match value provided.`
+export default function mustMatch(field : any, fieldToMatch : any, store: any) :any {
+    if (store.values[field] !== store.values[fieldToMatch]) {
+        store.errors[field] ??= {}
+        store.errors[field]['mustMatch'] = `Error: ${field} must match value provided.`
     } else {
-        if (newStore.errors[value]?.mustMatch) delete newStore.errors[value]['mustMatch'];
-        
+        if (store.errors[field]?.mustMatch) {
+            delete store.errors[field]['mustMatch'];
+            if (Object.keys(store.errors[field]).length === 0) delete store.errors[field]; 
     }
-    formStore.set(newStore);
+}
+    return store
 }

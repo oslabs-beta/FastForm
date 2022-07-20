@@ -1,6 +1,6 @@
 <script>
 
-  import { formStore } from '$lib/store';
+  import { formStore } from '../store';
   export let type;
   export let values;
   export let name;
