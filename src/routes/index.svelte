@@ -1,20 +1,25 @@
 <script>
-  //@ts-ignore
   import FastForm from "$lib/FastForm/FastForm.svelte"
   import Field from '$lib/Field/Field.svelte'
-  import Select from '$lib/Field/Select.svelte'
+  import { formStore } from '$lib/store'
   // import Field from '../lib/Field/Field.svelte'
   let initValues = {
-    icecream: []
+    name: 'Griffin',
+    icecream: ''
   }
 
-  function handleSubmit(values) {
-    console.log(values)
-  }
 </script>
 
-<FastForm initValues={initValues} handleSubmit={handleSubmit}>
-  <Field name='icecream' type='checkbox' values={['1', '2', '3']}/>
-  <Field name='' type='select' values={['1', '2', '3']} />
+<FastForm 
+initValues={initValues} 
+handleSubmit={handleSubmit}
+validate = {({values, errors, store}) => {
+  store.required('name')
+  }}>
+  <Field name='name' type='text' autocomplete='off'/>
+  <Field name='icecream' type='radio' values={['1', '2', '3']}/>
   <button type='submit'>Submit!</button>
 </FastForm>
+
+<p>{JSON.stringify($formStore.values)}</p>
+<p>{JSON.stringify($formStore.errors)}</p>

@@ -1,5 +1,5 @@
 <script>
-    import { formStore } from '../store.ts'
+    import { formStore } from '../store'
     export let initValues;
     export let validate; 
     export let handleSubmit;
@@ -8,8 +8,12 @@
 
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){
-        validate($formStore);
-        handleSubmit($formStore);
+        validate({
+          values: $formStore.values,
+          errors: $formStore.errors,
+          store: formStore
+        });
+        handleSubmit();
     }
 
 </script>

@@ -1,4 +1,4 @@
-import { formStore } from '$lib/store.js';
+import { formStore } from '../store';
 
 export default function mustMatch<T>(value : T, valueToMatch : T) {
     let newStore : any;

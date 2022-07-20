@@ -1,6 +1,6 @@
 {
   "name": "@fastform/form",
-  "version": "0.0.2",
+  "version": "0.1.3",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -39,8 +39,9 @@
     "vite": "^2.9.13"
   },
   "exports": {
+    ".": "./index.js",
     "./package.json": "./package.json",
-    "./validators": "./validators",
+    "./validators": "./validators/index.js",
     "./store.js": "./store.js",
     "./FastForm.svelte": "./FastForm/FastForm.svelte",
     "./Field.svelte": "./Field/Field.svelte"

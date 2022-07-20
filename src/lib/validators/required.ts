@@ -1,6 +1,6 @@
-import { formStore } from '$lib/store.ts';
+/* import { formStore } from '../store'; */
 
-export default function required(value) {
+/* export default function required(value) {
   let newStore
   formStore.subscribe(store => {
     newStore = store; 
@@ -15,4 +15,13 @@ export default function required(value) {
     }
     formStore.set(newStore)    
   }
+} */
+
+export default function required(field : any, store: any) : any {
+  console.log(field)
+  console.log(store)
+  if (!store.values[field]) {
+    store.errors.test = 'dsjghfaski'
+  }
+  return store
 }

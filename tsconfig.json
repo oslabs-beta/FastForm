@@ -11,6 +11,5 @@
 		"sourceMap": true,
 		"strict": true,
 	},
-  "include": ["src/**/*"],
-  "exclude": ["src/stories"]
+  "include": ["src/**/*"]
 }
