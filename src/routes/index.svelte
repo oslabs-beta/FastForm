@@ -8,10 +8,7 @@
     name2: 'Angel',
     icecream: []
   }
-
-  let v
-  let e
-
+  
   function handleSubmit(values) {
     console.log(values)
   }
