@@ -1,5 +1,5 @@
 <script>
-  import { formStore } from '$lib/store'
+  import { formStore } from '../store'
 
   export let values
   export let name

@@ -8,10 +8,7 @@
   //selects the input type
   function setType(node) {
     node.type = type;
-  }
-  let userInput = '';
- 
-    
+  }  
   
 </script>
 
