@@ -4,8 +4,8 @@
   //IMPORT ALL COMPONENTS BELOW
   import Input from './Input.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   // import Radio from './Radio.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  // import Checkbox from './CheckBox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  // import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  import Checkbox from './CheckBox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   
 
@@ -34,8 +34,8 @@
     url: Input,
     week: Input,
     // radio: Radio,
-    // checkbox: Checkbox,
-    // select: Select,
+    checkbox: Checkbox,
+    select: Select,
     // range: Range,
   };
 
