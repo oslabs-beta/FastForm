@@ -1,27 +1,13 @@
-/* import { formStore } from '../store'; */
-
-/* export default function required(value) {
-  let newStore
-  formStore.subscribe(store => {
-    newStore = store; 
-  })
-  if (!newStore.values[value]) {
-    if (!newStore.errors[value]) {
-      newStore.errors[value] = {
-        required: `Error. ${value} is a required field.`
-      } 
-    } else {
-      newStore.errors[value].required = `Error. ${value} is a required field.`
-    }
-    formStore.set(newStore)    
-  }
-} */
-
 export default function required(field : any, store: any) : any {
-  console.log(field)
-  console.log(store)
   if (!store.values[field]) {
-    store.errors.test = 'dsjghfaski'
+    store.errors[field] ??= {}
+    store.errors[field].required = `Error: ${field} is a required field.`
+  } else {
+    if (store.errors[field]?.required) {
+      delete store.errors[field].required
+      if (Object.keys(store.errors[field]).length === 0) delete store.errors[field]; 
+    };
+    
   }
-  return store
+  return store;
 }

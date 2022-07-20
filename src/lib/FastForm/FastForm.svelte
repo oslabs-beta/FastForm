@@ -11,7 +11,10 @@
         validate({
           values: $formStore.values,
           errors: $formStore.errors,
-          store: formStore
+          required: formStore.required,
+          mustMatch: formStore.mustMatch,
+          minNumOptions: formStore.minNumOptions,
+          maxNumOptions: formStore.maxNumOptions
         });
         handleSubmit();
     }

@@ -6,7 +6,7 @@ export const formStore = writable({
   });
  */
   import { writable } from 'svelte/store';
-  import { required } from './validators';
+  import { required, mustMatch, maxNumOptions, minNumOptions } from './validators';
 
   function createFormStore() {
     const { subscribe, set, update } = writable({
@@ -18,7 +18,10 @@ export const formStore = writable({
       subscribe,
       set,
       update,
-      required: (field:any) => update(store => required(field, store))
+      required: (field:any) => update(store => required(field, store)),
+      mustMatch: (field:any, fieldToMatch:any) => update(store => mustMatch(field, fieldToMatch, store)),
+      minNumOptions: (field:any, min:any) => update(store => minNumOptions(field, min, store)),
+      maxNumOptions: (field:any, max:any) => update(store => maxNumOptions(field, max, store))
     };
   }
   
