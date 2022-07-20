@@ -11,6 +11,8 @@
 
   //check the type of this Field element through props.  
   export let type:string;
+  //Access validate from props;
+  export let validate:(()=>{});
 
   //typeSelect is all the input types that user can input and are available on FastForm
   const typeSelect:any = {
@@ -41,11 +43,25 @@
 
   const renderDom:JSX.Element = typeSelect[type];
 
+
+  //on blur validator function
+  function handleBlur (){
+    //check if validate is a function. 
+    if (typeof validate ==='function'){
+      console.log('VALIDATE FUNCTION RUNNING')
+      validate();
+    }
+    else {
+      alert('VALIDATE IS NOT A FUNCTION')
+    }
+  }
+
+
 </script>
 
 <!-- use svelte:component to dynamically choose the correct component,
 we pass in all the props directly to the component -->
-<svelte:component this={renderDom} {...$$props}/>
+<svelte:component this={renderDom} {...$$props} {handleBlur}/>
 
 
 
