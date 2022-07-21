@@ -1,12 +1,15 @@
-<script>
+<script lang="ts">
 
   import { formStore } from '../store'
 
+  type node = {
+    type:string
+  }
   //prop components
-  export let type;
-  export let name;  
+  export let type:string;
+  export let name:string;  
   //selects the input type
-  function setType(node) {
+  function setType(node:node) {
     node.type = type;
   }  
   
