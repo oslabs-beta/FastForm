@@ -1,9 +1,9 @@
-<script>
+<script lang='ts'>
 
   import { formStore } from '../store';
-  export let type;
-  export let values;
-  export let name;
+  export let type:string;
+  export let values:string;
+  export let name:string;
 
 </script>
 
