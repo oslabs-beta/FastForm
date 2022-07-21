@@ -7,10 +7,13 @@
   import Checkbox from './Checkbox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  import { formStore } from '../store'
   
 
   //check the type of this Field element through props.  
   export let type:string;
+  //Access validate from props;
+  export let validate: any;
 
   //typeSelect is all the input types that user can input and are available on FastForm
   const typeSelect:any = {
@@ -41,11 +44,32 @@
 
   const renderDom:JSX.Element = typeSelect[type];
 
+
+  //on blur validator function
+  function handleBlur (){
+    //check if validate is a function, and will only run validate if it's passed in as a function
+    if (typeof validate ==='function'){
+      // console.log('VALIDATE FUNCTION RUNNING')
+      validate({
+          values: $formStore.values,
+          errors: $formStore.errors,
+          required: formStore.required,
+          mustMatch: formStore.mustMatch,
+          minNumOptions: formStore.minNumOptions,
+          maxNumOptions: formStore.maxNumOptions
+        });
+    }
+    // else {
+    //   alert('VALIDATE IS NOT A FUNCTION')
+    // }
+  }
+
+
 </script>
 
 <!-- use svelte:component to dynamically choose the correct component,
 we pass in all the props directly to the component -->
-<svelte:component this={renderDom} {...$$props}/>
+<svelte:component this={renderDom} {...$$props} {handleBlur}/>
 
 
 
