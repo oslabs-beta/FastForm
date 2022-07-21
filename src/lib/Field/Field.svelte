@@ -8,7 +8,6 @@
   import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   import { formStore } from '../store'
-  import type { SvelteComponentTyped } from 'svelte'
 
   //check the type of this Field element through props.  
   export let type:string;
