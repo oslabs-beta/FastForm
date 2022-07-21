@@ -49,7 +49,6 @@
   function handleBlur (){
     //check if validate is a function, and will only run validate if it's passed in as a function
     if (typeof validate ==='function'){
-      // console.log('VALIDATE FUNCTION RUNNING')
       validate({
           values: $formStore.values,
           errors: $formStore.errors,
@@ -59,9 +58,7 @@
           maxNumOptions: formStore.maxNumOptions
         });
     }
-    // else {
-    //   alert('VALIDATE IS NOT A FUNCTION')
-    // }
+
   }
 
 
