@@ -24,7 +24,11 @@
     minNumOptions?: (field:string, min:number, store:any)=>void,
     maxNumOptions?: (field:string, min:number, store:any)=>void
     }
-  export let validate: ({}:validateType) => {}
+  export let validate: ({}:validateType) => void
+  //set validate to a default empty function 
+  if (typeof validate !== 'function'){
+    validate = () => {};
+  };
 
   interface typeSelectType {[key:string]:any}; 
 
@@ -86,6 +90,7 @@
           maxNumOptions: formStore.maxNumOptions
         });
         handleChange()
+
   }
 </script>
 
