@@ -7,7 +7,9 @@
 </script>
 
 
+
 <select bind:value={$formStore.values[name]} name={name} on:blur={handleBlur} on:input={handleOnChange}>
+
  {#each values as value, i}
  
  <option value={value}>
