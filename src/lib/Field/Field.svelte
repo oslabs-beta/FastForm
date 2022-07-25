@@ -9,8 +9,10 @@
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   import { formStore } from '../store'
 
-  //check the type of this Field element through props.  
+  //import the following variables through props
   export let type:string;
+  export let onchange: string;
+  export let onblur: string;
   //Access validate from props;
   type validateType = {
     values?: object,
@@ -20,7 +22,11 @@
     minNumOptions?: (field:string, min:number, store:any)=>void,
     maxNumOptions?: (field:string, min:number, store:any)=>void
     }
-  export let validate: ({}:validateType) => {}
+  export let validate: ({}:validateType) => void
+  //set validate to a default empty function 
+  if (typeof validate !== 'function'){
+    validate = () => {};
+  };
 
   interface typeSelectType {[key:string]:any}; 
 
@@ -55,8 +61,9 @@
 
   //on blur validator function
   function handleBlur (){
-    //check if validate is a function, and will only run validate if it's passed in as a function
-    if (typeof validate ==='function'){
+    //Check if validate is a function, and will only run validate if it's passed in as a function
+    //This is the default validation method unless specified not required.
+    if (typeof validate ==='function' && onblur!=='false'){
       validate({
           values: $formStore.values,
           errors: $formStore.errors,
@@ -67,11 +74,24 @@
         });
     }
   }
+  //handleOnChange runs when the validate func is passed in with the onchange flag to be true.
+  //the function validates each time as the input changes
+  function handleOnChange(){
+    if (typeof validate==='function' && onchange === 'true')
+    validate({
+          values: $formStore.values,
+          errors: $formStore.errors,
+          required: formStore.required,
+          mustMatch: formStore.mustMatch,
+          minNumOptions: formStore.minNumOptions,
+          maxNumOptions: formStore.maxNumOptions
+        })
+  }
 </script>
 
 <!-- use svelte:component to dynamically choose the correct component,
 we pass in all the props directly to the component -->
-<svelte:component this={renderDom} {...$$props} {handleBlur}/>
+<svelte:component this={renderDom} {...$$props} {handleBlur} {handleOnChange}/>
 
 
 
