@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { formStore } from '../store'
 
-  export let values:string;
+  export let values:string[];
   export let name:string;
 </script>
 

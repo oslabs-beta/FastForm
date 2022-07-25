@@ -1,4 +1,9 @@
+const sveltePreprocess = require('svelte-preprocess');
+
 module.exports = {
+  svelteOptions: {
+    preprocess: sveltePreprocess(),
+  },
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/lib/**/*.stories.svelte"

@@ -1,15 +1,20 @@
-<script>
+<script lang="ts">
 
   import { formStore } from '../store'
 
+  type node = {
+    type:string
+  }
   //prop components
-  export let type;
-  export let name;  
+  export let type:string;
+  export let name:string;  
+  export let handleBlur:()=>void;
+  export let handleOnChange:()=>void;
   //selects the input type
-  function setType(node) {
+  function setType(node:node) {
     node.type = type;
-  }  
+  }
   
 </script>
 
-<input use:setType bind:value={$formStore.values[name]} {...$$props}>
+<input use:setType bind:value={$formStore.values[name]} on:blur={handleBlur} on:input={handleOnChange}>
