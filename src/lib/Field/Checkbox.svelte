@@ -1,8 +1,8 @@
-<script>
+<script lang='ts'>
   import { formStore } from '../store'
 
-  export let values
-  export let name
+  export let values:string[];
+  export let name:string;
 </script>
 
 {#each values as value}

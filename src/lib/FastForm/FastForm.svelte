@@ -8,6 +8,8 @@
 
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){
+        //When a validator function is passed in, run the validator function;
+        if (typeof validate === 'function'){
         validate({
           values: $formStore.values,
           errors: $formStore.errors,
@@ -15,8 +17,9 @@
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
           maxNumOptions: formStore.maxNumOptions
-        });
-        handleSubmit();
+        })};
+
+        handleSubmit($formStore);
     }
 
 </script>
