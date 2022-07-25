@@ -23,6 +23,7 @@
     maxNumOptions?: (field:string, min:number, store:any)=>void
     }
   export let validate: ({}:validateType) => void
+  //set validate to a default empty function 
   if (typeof validate !== 'function'){
     validate = () => {};
   };
@@ -85,9 +86,6 @@
           minNumOptions: formStore.minNumOptions,
           maxNumOptions: formStore.maxNumOptions
         })
-    else {
-
-    }
   }
 </script>
 
