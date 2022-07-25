@@ -6,6 +6,7 @@
 
     $formStore.values = {...initValues}
 
+    //default validate and handleSubmit function
     if (typeof validate !== 'function'){
       validate = () => {};
     };
@@ -25,7 +26,6 @@
           minNumOptions: formStore.minNumOptions,
           maxNumOptions: formStore.maxNumOptions
         })};
-        console.log('about to run handlesubmit')
         handleSubmit($formStore);
     }
 
