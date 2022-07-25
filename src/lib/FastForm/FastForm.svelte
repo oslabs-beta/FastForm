@@ -6,6 +6,13 @@
 
     $formStore.values = {...initValues}
 
+    if (typeof validate !== 'function'){
+      validate = () => {};
+    };
+    if (typeof handleSubmit !== 'function'){
+      handleSubmit = () => {};
+    }
+
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){
         //When a validator function is passed in, run the validator function;
@@ -18,7 +25,7 @@
           minNumOptions: formStore.minNumOptions,
           maxNumOptions: formStore.maxNumOptions
         })};
-
+        console.log('about to run handlesubmit')
         handleSubmit($formStore);
     }
 
