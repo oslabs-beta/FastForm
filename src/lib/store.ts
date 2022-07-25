@@ -6,16 +6,20 @@ export const formStore = writable({
   });
  */
   import { writable } from 'svelte/store';
+  // import  *  as test from 'svelte/store';
+  
   import { required, mustMatch, maxNumOptions, minNumOptions } from './validators';
   // import type { Writable } from 'svelte/store';
-  import type { formStoreType } from './types';
+  import type { formStoreType, formStoreValueType } from './types';
+
+  const initStoreValues:formStoreValueType = {
+    values: {},
+    errors: {}
+  }
 
   function createFormStore() : formStoreType {
-    const { subscribe, set, update } = writable({
-      values: {},
-      errors: {}
-    });
-  
+    const { subscribe, set, update } = writable(initStoreValues);
+    
     return {
       subscribe,
       set,
