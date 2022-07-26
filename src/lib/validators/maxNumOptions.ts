@@ -1,4 +1,6 @@
-export default function maxNumOptions(field : string, max : number, store : any ) : any {
+import type { formStoreValueType } from "../types";
+
+export default function maxNumOptions(field : string, max : number, store : formStoreValueType ) : formStoreValueType {
     if (store.values[field].length > max) {
         store.errors[field] ??= {}
         store.errors[field]['maxNumOptions'] = `Error. Maximum number of options has exceeded`
