@@ -1,5 +1,5 @@
 <script lang="ts">
-  // import { formStore } from '../store.ts';
+  import { formStore } from '../store';
 
   //IMPORT ALL COMPONENTS BELOW
   import Input from './Input.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
@@ -7,7 +7,7 @@
   import Checkbox from './Checkbox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  import { formStore } from '../store'
+  
 
   //import the following variables through props
   export let type:string;
@@ -60,7 +60,6 @@
   };
 
   const renderDom:JSX.Element = typeSelect[type];
-
   //on blur validator function
   function handleOnBlur (){
     //Check if validate is a function, and will only run validate if it's passed in as a function

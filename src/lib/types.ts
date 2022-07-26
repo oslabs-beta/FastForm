@@ -34,7 +34,7 @@ export type formStoreValueType = {
 }
 
 export type formStoreType = {
-    subscribe: any
+    subscribe: Writable<formStoreValueType>["subscribe"]
     set: any
     update: any
     required: (
