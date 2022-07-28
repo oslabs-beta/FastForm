@@ -1,34 +1,24 @@
 <script lang="ts">
-  // import { formStore } from '../store.ts';
+  import { formStore } from '../store';
+
+  import type { validateType } from '../types';
 
   //IMPORT ALL COMPONENTS BELOW
-  import Input from './Input.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  import Radio from './Radio.svelte'; //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  import Checkbox from './Checkbox.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  import Select from './Select.svelte' //CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+  import Input from './Input.svelte'; 
+  import Radio from './Radio.svelte'; 
+  import Checkbox from './Checkbox.svelte'
+  import Select from './Select.svelte' 
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
-  import { formStore } from '../store'
+  
 
   //import the following variables through props
   export let type:string;
-  export let onchange: string;
-  export let onblur: string;
+  export let validateOnChange: boolean = false;
+  export let validateOnBlur: boolean = true;
   export let handleChange: () => void = () => {}
   export let handleBlur: () => void = () => {}
-  //Access validate from props;
-  type validateType = {
-    values?: object,
-    errors?: object,
-    required?: (field:string, store:any)=>void,
-    mustMatch?: (field: string, fieldToMatch: string, store:any)=>void,
-    minNumOptions?: (field:string, min:number, store:any)=>void,
-    maxNumOptions?: (field:string, min:number, store:any)=>void
-    }
-  export let validate: ({}:validateType) => void
-  //set validate to a default empty function 
-  if (typeof validate !== 'function'){
-    validate = () => {};
-  };
+
+  export let validate: ({}:validateType) => void = () =>{}
 
   interface typeSelectType {[key:string]:any}; 
 
@@ -60,19 +50,18 @@
   };
 
   const renderDom:JSX.Element = typeSelect[type];
-
   //on blur validator function
   function handleOnBlur (){
     //Check if validate is a function, and will only run validate if it's passed in as a function
     //This is the default validation method unless specified not required.
-    if (typeof validate ==='function' && onblur!=='false'){
+    if (typeof validate ==='function' && validateOnBlur === true){
+      $formStore.errors = {}
       validate({
-          values: $formStore.values,
-          errors: $formStore.errors,
           required: formStore.required,
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions
+          maxNumOptions: formStore.maxNumOptions,
+          customValidator: formStore.customValidator
         });
     }
     handleBlur()
@@ -80,17 +69,17 @@
   //handleOnChange runs when the validate func is passed in with the onchange flag to be true.
   //the function validates each time as the input changes
   function handleOnChange(){
-    if (typeof validate==='function' && onchange === 'true')
+    if (typeof validate==='function' && validateOnChange === true){
+    $formStore.errors = {}
     validate({
-          values: $formStore.values,
-          errors: $formStore.errors,
           required: formStore.required,
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions
+          maxNumOptions: formStore.maxNumOptions,
+          customValidator: formStore.customValidator
         });
         handleChange()
-
+    }
   }
 </script>
 
