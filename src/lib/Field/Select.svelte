@@ -2,13 +2,13 @@
     import { formStore } from '../store'
     export let values:[];
     export let name:string;
-    export let handleBlur:()=>void;
+    export let handleOnBlur:()=>void;
     export let handleOnChange:()=>void; 
 </script>
 
 
 
-<select bind:value={$formStore.values[name]} name={name} on:blur={handleBlur} on:input={handleOnChange}>
+<select bind:value={$formStore.values[name]} name={name} on:blur={handleOnBlur} on:input={handleOnChange}>
 
  {#each values as value, i}
  
