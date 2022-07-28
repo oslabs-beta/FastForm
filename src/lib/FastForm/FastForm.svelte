@@ -1,8 +1,12 @@
 <script lang="ts">
     import { formStore } from '../store'
     export let initValues;
-    export let validate: Function;
-    export let handleSubmit: Function;
+
+    export type validate = (input: formStoreType) => void;
+    export type handleSubmit = (userInput: formStoreValueType) => void;
+    export let validate: validate; 
+    export let handleSubmit: handleSubmit;
+    
     $formStore.values = {...initValues}
 
     //default validate and handleSubmit function
