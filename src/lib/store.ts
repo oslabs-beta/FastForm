@@ -6,22 +6,28 @@ export const formStore = writable({
   });
  */
   import { writable } from 'svelte/store';
-  import { required, mustMatch, maxNumOptions, minNumOptions } from './validators';
-
-  function createFormStore() {
-    const { subscribe, set, update } = writable({
-      values: {},
-      errors: {}
-    });
+  // import  *  as test from 'svelte/store';
   
+  import { required, mustMatch, maxNumOptions, minNumOptions } from './validators';
+  // import type { Writable } from 'svelte/store';
+  import type { formStoreType, formStoreValueType } from './types';
+
+  const initStoreValues:formStoreValueType = {
+    values: {},
+    errors: {}
+  }
+
+  function createFormStore() : formStoreType {
+    const { subscribe, set, update } = writable(initStoreValues);
+    
     return {
       subscribe,
       set,
       update,
-      required: (field:any) => update(store => required(field, store)),
-      mustMatch: (field:any, fieldToMatch:any) => update(store => mustMatch(field, fieldToMatch, store)),
-      minNumOptions: (field:any, min:any) => update(store => minNumOptions(field, min, store)),
-      maxNumOptions: (field:any, max:any) => update(store => maxNumOptions(field, max, store))
+      required: (field) => update(store => required(field, store)),
+      mustMatch: (field, fieldToMatch) => update(store => mustMatch(field, fieldToMatch, store)),
+      minNumOptions: (field, min) => update(store => minNumOptions(field, min, store)),
+      maxNumOptions: (field, max) => update(store => maxNumOptions(field, max, store))
     };
   }
   
