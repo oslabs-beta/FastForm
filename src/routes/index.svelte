@@ -17,11 +17,21 @@
 <FastForm 
 initValues={initValues} 
 handleSubmit={handleSubmit}
-validate = {({values, errors, required, mustMatch, minNumOptions, maxNumOptions}) => {
-  required('name')
+validate = {({values, errors, required, mustMatch, minNumOptions, maxNumOptions, customValidator}) => {
   mustMatch('name', 'name2')
   maxNumOptions('icecream', 2)
   minNumOptions('icecream', 1)
+  customValidator(({values, errors}) => {
+    if (errors.name) {
+      errors.custom ??= {}
+      errors.custom.custom = 'Some message'
+    }
+    return {
+      values,
+      errors
+    }
+  })
+  required('name')
   }}>
   <Field name='name' type='text' autocomplete='off'/>
   <Field name='name2' type='text' autocomplete='off'/>

@@ -15,13 +15,13 @@
     function onSubmit(){
         //When a validator function is passed in, run the validator function;
         if (typeof validate === 'function'){
+        $formStore.errors = {}
         validate({
-          values: $formStore.values,
-          errors: $formStore.errors,
           required: formStore.required,
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions
+          maxNumOptions: formStore.maxNumOptions,
+          customValidator: formStore.customValidator
         })};
         handleSubmit($formStore);
     }
