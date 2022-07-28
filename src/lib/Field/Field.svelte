@@ -1,6 +1,8 @@
 <script lang="ts">
   import { formStore } from '../store';
 
+  import type { validateType } from '../types';
+
   //IMPORT ALL COMPONENTS BELOW
   import Input from './Input.svelte'; 
   import Radio from './Radio.svelte'; 
@@ -16,15 +18,6 @@
   export let handleChange: () => void = () => {}
   export let handleBlur: () => void = () => {}
 
-  //Access validate from props;
-  type validateType = {
-    values?: object,
-    errors?: object,
-    required?: (field:string, store:any)=>void,
-    mustMatch?: (field: string, fieldToMatch: string, store:any)=>void,
-    minNumOptions?: (field:string, min:number, store:any)=>void,
-    maxNumOptions?: (field:string, min:number, store:any)=>void
-    }
   export let validate: ({}:validateType) => void = () =>{}
 
   interface typeSelectType {[key:string]:any}; 
@@ -62,13 +55,13 @@
     //Check if validate is a function, and will only run validate if it's passed in as a function
     //This is the default validation method unless specified not required.
     if (typeof validate ==='function' && validateOnBlur === true){
+      $formStore.errors = {}
       validate({
-          values: $formStore.values,
-          errors: $formStore.errors,
           required: formStore.required,
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions
+          maxNumOptions: formStore.maxNumOptions,
+          customValidator: formStore.customValidator
         });
     }
     handleBlur()
@@ -76,17 +69,17 @@
   //handleOnChange runs when the validate func is passed in with the onchange flag to be true.
   //the function validates each time as the input changes
   function handleOnChange(){
-    if (typeof validate==='function' && validateOnChange === true)
+    if (typeof validate==='function' && validateOnChange === true){
+    $formStore.errors = {}
     validate({
-          values: $formStore.values,
-          errors: $formStore.errors,
           required: formStore.required,
           mustMatch: formStore.mustMatch,
           minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions
+          maxNumOptions: formStore.maxNumOptions,
+          customValidator: formStore.customValidator
         });
         handleChange()
-
+    }
   }
 </script>
 
