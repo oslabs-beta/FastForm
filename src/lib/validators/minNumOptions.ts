@@ -10,5 +10,9 @@ export default function minNumOptions(field : string, min : number, store : form
       if (Object.keys(store.errors[field]).length === 0) delete store.errors[field]; 
   }
 }
+if (Array.isArray(store.values[field]) === false) {
+    throw new Error('Error: minNumOptions is being used with a non-array type.')
+  }
+
 return store;
 }
