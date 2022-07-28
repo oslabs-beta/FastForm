@@ -1,21 +1,15 @@
 <script lang="ts">
     import { formStore } from '../store'
-    export let initValues;
-
-    export type validate = (input: formStoreType) => void;
-    export type handleSubmit = (userInput: formStoreValueType) => void;
+    import type { validate, handleSubmit, initValue } from '../types'
+   
+    //props that need to be passed in 
+    export let initValues: initValue;
     export let validate: validate; 
     export let handleSubmit: handleSubmit;
     
     $formStore.values = {...initValues}
 
-    //default validate and handleSubmit function
-    if (typeof validate !== 'function'){
-      validate = () => {};
-    };
-    if (typeof handleSubmit !== 'function'){
-      handleSubmit = () => {};
-    }
+   
 
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){

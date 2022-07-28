@@ -53,3 +53,9 @@ export type formStoreType = {
         min: number
     ) => void
 }
+//FastForm component types
+export type validate = (input: formStoreType) => void;
+export type handleSubmit = (userInput: formStoreValueType) => void;
+export type initValue = {
+  [key: string]:any
+}
