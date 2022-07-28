@@ -4,12 +4,12 @@
   export let type:string;
   export let values:string[];
   export let name:string;
-  export let handleBlur:()=>void;
+  export let handleOnBlur:()=>void;
   export let handleOnChange:()=>void;
 
 </script>
 
 {#each values as value }
-  <input type="radio" name={name} value={value} bind:group={$formStore.values[name]} on:blur={handleBlur} on:input={handleOnChange}>
+  <input type="radio" name={name} value={value} bind:group={$formStore.values[name]} on:blur={handleOnBlur} on:input={handleOnChange}>
   <label for={value}>{value}</label>
 {/each}

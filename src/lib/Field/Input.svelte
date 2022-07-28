@@ -8,7 +8,7 @@
   //prop components
   export let type:string;
   export let name:string;  
-  export let handleBlur:()=>void;
+  export let handleOnBlur:()=>void;
   export let handleOnChange:()=>void;
   //selects the input type
   function setType(node:node) {
@@ -17,4 +17,4 @@
   
 </script>
 
-<input use:setType bind:value={$formStore.values[name]} on:blur={handleBlur} on:input={handleOnChange}>
+<input use:setType bind:value={$formStore.values[name]} on:blur={handleOnBlur} on:input={handleOnChange}>
