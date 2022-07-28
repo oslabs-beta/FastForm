@@ -2,10 +2,11 @@
     import { formStore } from '../store'
     import type { validate, handleSubmit, initValue } from '../types'
    
-    //props that need to be passed in 
+    //props for FastForm component
+    //set default values for validate and handleSubmit to be empty functions 
     export let initValues: initValue;
-    export let validate: validate; 
-    export let handleSubmit: handleSubmit;
+    export let validate: validate = () =>{}; 
+    export let handleSubmit: handleSubmit = () => {};
     
     $formStore.values = {...initValues}
 
