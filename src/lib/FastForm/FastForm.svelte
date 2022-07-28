@@ -1,19 +1,16 @@
-<script>
+<script lang="ts">
     import { formStore } from '../store'
-
-    export let initValues;
-    export let validate; 
-    export let handleSubmit;
-
+    import type { validate, handleSubmit, initValue } from '../types'
+   
+    //props for FastForm component
+    //set default values for validate and handleSubmit to be empty functions 
+    export let initValues: initValue;
+    export let validate: validate = () =>{}; 
+    export let handleSubmit: handleSubmit = () => {};
+    
     $formStore.values = {...initValues}
 
-    //default validate and handleSubmit function
-    if (typeof validate !== 'function'){
-      validate = () => {};
-    };
-    if (typeof handleSubmit !== 'function'){
-      handleSubmit = () => {};
-    }
+   
 
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){

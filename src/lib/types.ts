@@ -42,3 +42,9 @@ export type validateType = {
   maxNumOptions: (field:string, min:number)=>void,
   customValidator: (func: (store: formStoreValueType) => formStoreValueType)=>void
 }
+//FastForm.svelte variable types
+export type validate = (input: validateType) => void;
+export type handleSubmit = (userInput: formStoreValueType) => void;
+export type initValue = {
+  [key: string]:any
+}
