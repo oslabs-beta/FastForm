@@ -8,5 +8,10 @@ export default function maxNumOptions(field : string, max : number, store : any 
         if (Object.keys(store.errors[field]).length === 0) delete store.errors[field]; 
     }
   }
+  if (Array.isArray(store.values[field]) === false) {
+    throw new Error('Error: maxNumOptions is being used with a non-array type.')
+  }
+
+
   return store;
 }
