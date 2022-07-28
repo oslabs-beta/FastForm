@@ -1,27 +1,5 @@
 import type { Writable } from 'svelte/store'; 
 
-// export type formStoreType = {
-    
-//     subscribe: any
-//     // type subscribe = {} 
-//     // type set: any 
-//     // type update: any 
-//     required: (
-//         field : string
-//     ) => void
-//     mustMatch: (
-//         field: string, 
-//         fieldToMatch: string
-//     ) => void
-//     maxNumOptions: (
-//         field: string, 
-//         max: number
-//     ) => void
-//     minNumOptions: (
-//         field: string, 
-//         min: number
-//     ) => void
-// }
 export type formStoreValueType = {
     values: {
         [index: string]: any
@@ -52,4 +30,15 @@ export type formStoreType = {
         field: string, 
         min: number
     ) => void
+    customValidator: (
+      func: (store: formStoreValueType) => formStoreValueType
+    ) => void
+}
+
+export type validateType = {
+  required: (field:string)=>void,
+  mustMatch: (field: string, fieldToMatch: string)=>void,
+  minNumOptions: (field:string, min:number)=>void,
+  maxNumOptions: (field:string, min:number)=>void,
+  customValidator: (func: (store: formStoreValueType) => formStoreValueType)=>void
 }
