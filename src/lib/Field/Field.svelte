@@ -9,7 +9,7 @@
   import Checkbox from './Checkbox.svelte'
   import Select from './Select.svelte'
   import Multiselect from './Multiselect.svelte' 
-  // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
+
   
 
   //import the following variables through props
@@ -47,8 +47,8 @@
     radio: Radio,
     checkbox: Checkbox,
     select: Select,
-    multiselect: Multiselect
-    // range: Range,
+    multiselect: Multiselect,
+    range: Input
   };
 
   const renderDom:JSX.Element = typeSelect[type];

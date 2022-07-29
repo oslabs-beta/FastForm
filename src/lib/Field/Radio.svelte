@@ -1,12 +1,10 @@
 <script lang='ts'>
-
   import { formStore } from '../store';
-  export let type:string;
+
   export let values:string[];
   export let name:string;
   export let handleOnBlur:()=>void;
   export let handleOnChange:()=>void;
-
 </script>
 
 {#each values as value }
