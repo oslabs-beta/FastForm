@@ -17,4 +17,4 @@
   
 </script>
 
-<input use:setType bind:value={$formStore.values[name]} on:blur={handleOnBlur} on:input={handleOnChange}>
+<input use:setType bind:value={$formStore.values[name]} {...$$restProps} on:blur={handleOnBlur} on:input={handleOnChange}>
