@@ -7,7 +7,8 @@
   import Input from './Input.svelte'; 
   import Radio from './Radio.svelte'; 
   import Checkbox from './Checkbox.svelte'
-  import Select from './Select.svelte' 
+  import Select from './Select.svelte'
+  import Multiselect from './Multiselect.svelte' 
   // import Range from './Range.svelte'//CHECK IF FILE PATH IS CORRECT BEFORE DELETING THIS COMMENT
   
 
@@ -46,6 +47,7 @@
     radio: Radio,
     checkbox: Checkbox,
     select: Select,
+    multiselect: Multiselect
     // range: Range,
   };
 
