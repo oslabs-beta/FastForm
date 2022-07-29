@@ -4,9 +4,10 @@
   import { formStore } from '$lib/store'
   // import Field from '../lib/Field/Field.svelte'
   let initValues = {
-    name: 'Griffin',
+    name: '',
     name2: 'Angel',
-    icecream: []
+    icecream: [],
+    cars: []
   }
   
   function handleSubmit(values) {
@@ -36,6 +37,7 @@ validate = {({values, errors, required, mustMatch, minNumOptions, maxNumOptions,
   <Field name='name' type='text' autocomplete='off'/>
   <Field name='name2' type='text' autocomplete='off'/>
   <Field name='icecream' type='checkbox' values={['Chocolate', 'Vanilla', 'Cookies N Cream']}/>
+  <Field name='cars' type='multiselect' values={['Volvo', 'Audi', 'Toyota']}/>
   <button type='submit'>Submit!</button>
 </FastForm>
 

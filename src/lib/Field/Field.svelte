@@ -7,7 +7,9 @@
   import Input from './Input.svelte'; 
   import Radio from './Radio.svelte'; 
   import Checkbox from './Checkbox.svelte'
-  import Select from './Select.svelte' 
+  import Select from './Select.svelte'
+  import Multiselect from './Multiselect.svelte' 
+
   
 
   //import the following variables through props
@@ -45,7 +47,8 @@
     radio: Radio,
     checkbox: Checkbox,
     select: Select,
-    range: Input,
+    multiselect: Multiselect,
+    range: Input
   };
 
   const renderDom:JSX.Element = typeSelect[type];
