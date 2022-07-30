@@ -7,7 +7,7 @@
     "package": "svelte-kit package",
     "preview": "vite preview",
     "prepare": "svelte-kit sync",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
