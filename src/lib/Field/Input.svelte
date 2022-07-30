@@ -6,13 +6,13 @@
     type:string
   }
   //prop components
-  export let type:string;
-  export let name:string;  
-  export let handleOnBlur:()=>void;
-  export let handleOnChange:()=>void;
+  export let type:string
+  export let name:string  
+  export let handleOnBlur:()=>void
+  export let handleOnChange:()=>void
   //selects the input type
   function setType(node:node) {
-    node.type = type;
+    node.type = type
   }
   
 </script>
