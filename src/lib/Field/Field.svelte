@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { formStore } from '../store';
+  import { formStore } from '../store'
 
-  import type { validateType } from '../types';
+  import type { validateType } from '../types'
 
   //IMPORT ALL COMPONENTS BELOW
-  import Input from './Input.svelte'; 
-  import Radio from './Radio.svelte'; 
+  import Input from './Input.svelte' 
+  import Radio from './Radio.svelte' 
   import Checkbox from './Checkbox.svelte'
   import Select from './Select.svelte'
   import Multiselect from './Multiselect.svelte' 
@@ -13,9 +13,9 @@
   
 
   //import the following variables through props
-  export let type:string;
-  export let validateOnChange: boolean = false;
-  export let validateOnBlur: boolean = true;
+  export let type:string
+  export let validateOnChange: boolean = false
+  export let validateOnBlur: boolean = true
   export let handleChange: () => void = () => {}
   export let handleBlur: () => void = () => {}
 
@@ -49,38 +49,38 @@
     select: Select,
     multiselect: Multiselect,
     range: Input
-  };
+  }
 
-  const renderDom:JSX.Element = typeSelect[type];
+  const renderDom:JSX.Element = typeSelect[type]
   //on blur validator function
   function handleOnBlur (){
     //Check if validate is a function, and will only run validate if it's passed in as a function
     //This is the default validation method unless specified not required.
-    if (typeof validate ==='function' && validateOnBlur === true){
+    if (typeof validate === 'function' && validateOnBlur === true){
       $formStore.errors = {}
       validate({
-          required: formStore.required,
-          mustMatch: formStore.mustMatch,
-          minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions,
-          customValidator: formStore.customValidator
-        });
+        required: formStore.required,
+        mustMatch: formStore.mustMatch,
+        minNumOptions: formStore.minNumOptions,
+        maxNumOptions: formStore.maxNumOptions,
+        customValidator: formStore.customValidator
+      })
     }
     handleBlur()
   }
   //handleOnChange runs when the validate func is passed in with the onchange flag to be true.
   //the function validates each time as the input changes
   function handleOnChange(){
-    if (typeof validate==='function' && validateOnChange === true){
-    $formStore.errors = {}
-    validate({
-          required: formStore.required,
-          mustMatch: formStore.mustMatch,
-          minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions,
-          customValidator: formStore.customValidator
-        });
-        handleChange()
+    if (typeof validate === 'function' && validateOnChange === true){
+      $formStore.errors = {}
+      validate({
+        required: formStore.required,
+        mustMatch: formStore.mustMatch,
+        minNumOptions: formStore.minNumOptions,
+        maxNumOptions: formStore.maxNumOptions,
+        customValidator: formStore.customValidator
+      })
+      handleChange()
     }
   }
 </script>

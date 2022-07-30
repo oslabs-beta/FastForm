@@ -1,9 +1,9 @@
 <script lang="ts">
     import { formStore } from '../store'
-    export let values:[];
-    export let name:string;
-    export let handleOnBlur:()=>void;
-    export let handleOnChange:()=>void; 
+    export let values:[]
+    export let name:string
+    export let handleOnBlur:()=>void
+    export let handleOnChange:()=>void
 </script>
 
 
