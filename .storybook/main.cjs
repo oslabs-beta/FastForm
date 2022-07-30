@@ -9,9 +9,15 @@ module.exports = {
     "../src/lib/**/*.stories.svelte"
   ],
   "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    "@storybook/addon-links",{
+    name: "@storybook/addon-essentials",
+    options: {
+      viewport: false,
+      measure: false,
+      backgrounds: false,
+      outline: false
+    }
+  },
     "@storybook/addon-svelte-csf"
   ],
   "framework": "@storybook/svelte",
