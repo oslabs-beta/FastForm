@@ -1,7 +1,7 @@
 <script lang="ts">
   import { formStore } from '../store'
 
-  import type { validateType, formStoreValueType } from '../types';
+  import type { validateType, formStoreValueType } from '../types'
 
   //IMPORT ALL COMPONENTS BELOW
   import Input from '../Input/Input.svelte' 
@@ -13,9 +13,9 @@
   
 
   //import the following variables through props
-  export let type:string;
-  export let validateOnBlur: boolean = true;
-  export let validateOnChange: boolean = validateOnBlur ? false : true;
+  export let type:string
+  export let validateOnBlur: boolean = true
+  export let validateOnChange: boolean = validateOnBlur ? false : true
   export let handleChange: (store: formStoreValueType) => void = () => {}
   export let handleBlur: (store: formStoreValueType) => void = () => {}
 
@@ -72,15 +72,15 @@
   //the function validates each time as the input changes
   function handleOnChange(){
     if (validateOnChange){
-    $formStore.errors = {}
-    validate({
-          required: formStore.required,
-          mustMatch: formStore.mustMatch,
-          minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions,
-          customValidator: formStore.customValidator
-        });
-      }
+      $formStore.errors = {}
+      validate({
+        required: formStore.required,
+        mustMatch: formStore.mustMatch,
+        minNumOptions: formStore.minNumOptions,
+        maxNumOptions: formStore.maxNumOptions,
+        customValidator: formStore.customValidator
+      })
+    }
     handleChange($formStore)
   }
 </script>
