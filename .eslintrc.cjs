@@ -6,7 +6,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['*.svelte'],
+      files: ['*.svelte', '*.stories.svelte'],
       processor: 'svelte3/svelte3'
     }
   ],
