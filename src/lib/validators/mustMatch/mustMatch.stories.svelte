@@ -14,16 +14,17 @@
   }}
 />
 
-<Story name='required'>
-  <FastForm initValues={{ name: '' }}
+<Story name='mustMatch'>
+  <FastForm initValues={{ name: '', name2: '' }}
     handleSubmit={({values, errors}) => {
     myValues = values
     myErrors = errors
   }}
-  validate={({required}) => {
-    required('name')
+  validate={({mustMatch}) => {
+    mustMatch('name', 'name2')
   }}>
     <Field name='name' type='text' placeholder='Enter Text Here'/>
+    <Field name='name2' type='text' placeholder='Enter Text Here'/>
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>

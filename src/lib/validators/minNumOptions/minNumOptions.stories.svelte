@@ -14,16 +14,16 @@
   }}
 />
 
-<Story name='required'>
-  <FastForm initValues={{ name: '' }}
+<Story name='minNumOptions'>
+  <FastForm initValues={{ icecream: [] }}
     handleSubmit={({values, errors}) => {
     myValues = values
     myErrors = errors
   }}
-  validate={({required}) => {
-    required('name')
+  validate={({minNumOptions}) => {
+    minNumOptions('icecream', 1)
   }}>
-    <Field name='name' type='text' placeholder='Enter Text Here'/>
+    <Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate', 'Cookies \'N Cream']} />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>

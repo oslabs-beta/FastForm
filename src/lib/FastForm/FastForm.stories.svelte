@@ -24,9 +24,9 @@
     myErrors = errors
   }}
   >
-    <Field name='name' type='text' autocomplete='off'/>
-    <Field name='email' type='text' autocomplete='off'/>
-    <Field name='confirmEmail' type='text' autocomplete='off'/>
+    <Field name='name' type='text' autocomplete='off' placeholder='Name' />
+    <Field name='email' type='text' autocomplete='off'placeholder='Email' />
+    <Field name='confirmEmail' type='text' autocomplete='off' placeholder='Confirm Email' />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>
@@ -39,9 +39,9 @@
   name="No Validation"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     }
   }}
 />
@@ -50,9 +50,9 @@
   name="Name Required"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     },
     validate: ({required}) => {
       required('name')
@@ -64,9 +64,9 @@
   name="Emails Must Match"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     },
     validate: ({mustMatch}) => {
       mustMatch('confirmEmail', 'email')
