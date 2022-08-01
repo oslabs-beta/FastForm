@@ -1,4 +1,4 @@
-import type { formStoreValueType } from '../types'
+import type { formStoreValueType } from '../../types'
 
 export default function required(field : string, store: formStoreValueType) : formStoreValueType {
   if (!store.values[field]) {

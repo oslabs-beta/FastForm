@@ -1,4 +1,4 @@
-import required from './required'
+import required from './required/required'
 import mustMatch from './mustMatch'
 import minNumOptions from './minNumOptions'
 import maxNumOptions from './maxNumOptions'
