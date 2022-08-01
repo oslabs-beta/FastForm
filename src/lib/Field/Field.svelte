@@ -4,11 +4,11 @@
   import type { validateType, formStoreValueType } from '../types';
 
   //IMPORT ALL COMPONENTS BELOW
-  import Input from './Input.svelte' 
-  import Radio from './Radio.svelte' 
-  import Checkbox from './Checkbox.svelte'
-  import Select from './Select.svelte'
-  import Multiselect from './Multiselect.svelte' 
+  import Input from '../Input/Input.svelte' 
+  import Radio from '../Radio/Radio.svelte' 
+  import Checkbox from '../Checkbox/Checkbox.svelte'
+  import Select from '../Select/Select.svelte'
+  import Multiselect from '../Multiselect/Multiselect.svelte' 
 
   
 
