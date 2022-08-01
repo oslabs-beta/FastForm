@@ -1,5 +1,5 @@
 <script>
-  import { Meta, Story } from '@storybook/addon-svelte-csf'
+  import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
   import { FastForm, Field } from '../../index'
 
   let myValues = {}
@@ -14,14 +14,14 @@
   }}
 />
 
-<Story name='maxNumOptions'>
+<Template let:args>
   <FastForm initValues={{ icecream: [] }}
     handleSubmit={({values, errors}) => {
     myValues = values
     myErrors = errors
   }}
   validate={({maxNumOptions}) => {
-    maxNumOptions('icecream', 2)
+    maxNumOptions('icecream', args.max)
   }}>
     <Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate', 'Cookies \'N Cream']} />
     <button type='submit'>Submit</button>
@@ -29,4 +29,12 @@
   <hr/>
   <pre>{JSON.stringify(myValues, null, 2)}</pre>
   <pre style="color:red">{JSON.stringify(myErrors, null, 2)}</pre>
-</Story>
+</Template>
+
+
+<Story
+  name="maxNumOptions"
+  args={{
+    max: 2
+  }}
+/>
