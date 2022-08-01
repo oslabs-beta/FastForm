@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { formStore } from '../store';
+  import { formStore } from '../store'
 
   import type { validateType, formStoreValueType } from '../types';
 
   //IMPORT ALL COMPONENTS BELOW
-  import Input from './Input.svelte'; 
-  import Radio from './Radio.svelte'; 
+  import Input from './Input.svelte' 
+  import Radio from './Radio.svelte' 
   import Checkbox from './Checkbox.svelte'
   import Select from './Select.svelte'
   import Multiselect from './Multiselect.svelte' 
@@ -49,9 +49,9 @@
     select: Select,
     multiselect: Multiselect,
     range: Input
-  };
+  }
 
-  const renderDom:JSX.Element = typeSelect[type];
+  const renderDom:JSX.Element = typeSelect[type]
   //on blur validator function
   function handleOnBlur (){
     //Check if validate is a function, and will only run validate if it's passed in as a function
@@ -59,12 +59,12 @@
     if (validateOnBlur){
       $formStore.errors = {}
       validate({
-          required: formStore.required,
-          mustMatch: formStore.mustMatch,
-          minNumOptions: formStore.minNumOptions,
-          maxNumOptions: formStore.maxNumOptions,
-          customValidator: formStore.customValidator
-        });
+        required: formStore.required,
+        mustMatch: formStore.mustMatch,
+        minNumOptions: formStore.minNumOptions,
+        maxNumOptions: formStore.maxNumOptions,
+        customValidator: formStore.customValidator
+      })
     }
     handleBlur($formStore)
   }

@@ -1,9 +1,9 @@
 <script>
-  import FastForm from "$lib/FastForm/FastForm.svelte"
+  import FastForm from '$lib/FastForm/FastForm.svelte'
   import Field from '$lib/Field/Field.svelte'
   import { formStore } from '$lib/store'
   // import Field from '../lib/Field/Field.svelte'
-  let initValues = {
+  const initValues = {
     name: '',
     name2: 'Angel',
     icecream: [],

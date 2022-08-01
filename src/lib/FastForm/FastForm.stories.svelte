@@ -1,7 +1,7 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import FastForm from "./FastForm.svelte";
-  import Field from '../Field/Field.svelte';
+  import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+  import FastForm from './FastForm.svelte'
+  import Field from '../Field/Field.svelte'
 
   let myValues = {}
   let myErrors = {}

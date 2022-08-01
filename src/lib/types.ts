@@ -1,4 +1,4 @@
-import type { Writable } from 'svelte/store'; 
+import type { Writable } from 'svelte/store'
 
 export type formStoreValueType = {
     values: {
@@ -12,7 +12,7 @@ export type formStoreValueType = {
 }
 
 export type formStoreType = {
-    subscribe: Writable<formStoreValueType>["subscribe"]
+    subscribe: Writable<formStoreValueType>['subscribe']
     set: any
     update: any
     required: (
