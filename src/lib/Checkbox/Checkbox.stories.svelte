@@ -8,7 +8,7 @@
 
 
 <Meta
-  title="Field/Examples"
+  title="Field/Checkbox"
   component={Field}
   argTypes={{
     validateOnBlur: { control: false },
