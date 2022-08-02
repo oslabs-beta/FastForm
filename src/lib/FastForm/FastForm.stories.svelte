@@ -1,7 +1,6 @@
 <script>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-  import FastForm from './FastForm.svelte'
-  import Field from '../Field/Field.svelte'
+  import { FastForm, Field } from '../index'
 
   let myValues = {}
   let myErrors = {}
@@ -25,9 +24,9 @@
     myErrors = errors
   }}
   >
-    <Field name='name' type='text' autocomplete='off'/>
-    <Field name='email' type='text' autocomplete='off'/>
-    <Field name='confirmEmail' type='text' autocomplete='off'/>
+    <Field name='name' type='text' autocomplete='off' placeholder='Name' />
+    <Field name='email' type='text' autocomplete='off'placeholder='Email' />
+    <Field name='confirmEmail' type='text' autocomplete='off' placeholder='Confirm Email' />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>
@@ -40,9 +39,9 @@
   name="No Validation"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     }
   }}
 />
@@ -51,9 +50,9 @@
   name="Name Required"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     },
     validate: ({required}) => {
       required('name')
@@ -65,9 +64,9 @@
   name="Emails Must Match"
   args={{
     initValues: {
-      name: 'Name',
-      email: 'Email',
-      confirmEmail: 'Confirm Email'
+      name: '',
+      email: '',
+      confirmEmail: ''
     },
     validate: ({mustMatch}) => {
       mustMatch('confirmEmail', 'email')

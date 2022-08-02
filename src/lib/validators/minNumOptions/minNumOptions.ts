@@ -1,4 +1,4 @@
-import type { formStoreValueType } from '../types'
+import type { formStoreValueType } from '../../types'
 
 export default function minNumOptions(field : string, min : number, store : formStoreValueType ) : formStoreValueType {
   if (Array.isArray(store.values[field]) === false) {
