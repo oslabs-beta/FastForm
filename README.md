@@ -1,16 +1,15 @@
 <div align="center">
   <img src ="https://user-images.githubusercontent.com/68932231/182443901-01a1870c-a688-4042-b2a8-ebc22b749e19.png")
 
-</div>
+<br>
+
+[![NPM Version](https://img.shields.io/npm/v/@fastform/form?color=skyblue)](https://www.npmjs.com/package/@fastform/form)
+[![MIT License](https://img.shields.io/github/license/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm/blob/dev/LICENSE)
+[![Downloads](https://img.shields.io/npm/dt/@fastform/form?color=skyblue)](https://www.npmjs.com/package/@fastform/form)
+[![Forks](https://img.shields.io/github/forks/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm)
+[![Stars](https://img.shields.io/github/stars/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm)
 
 
-<div align="center">
-
-![NPM Version](https://img.shields.io/npm/v/@fastform/form?color=skyblue)
-![MIT License](https://img.shields.io/github/license/oslabs-beta/fastform?color=skyblue)
-![Downloads](https://img.shields.io/npm/dt/@fastform/form?color=skyblue)
-![Forks](https://img.shields.io/github/forks/oslabs-beta/fastform?color=skyblue)
-![Stars](https://img.shields.io/github/stars/oslabs-beta/fastform?color=skyblue)
 
 </div>
 
