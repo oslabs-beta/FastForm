@@ -44,6 +44,7 @@
 
 
 <Story
+  id="example"
   name="FastForm"
   args={{
     initValues: {
