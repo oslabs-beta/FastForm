@@ -3,11 +3,11 @@
 
 <br>
 
-[![NPM Version](https://img.shields.io/npm/v/@fastform/form?color=skyblue)](https://www.npmjs.com/package/@fastform/form)
-[![MIT License](https://img.shields.io/github/license/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm/blob/dev/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@fastform/form)](https://www.npmjs.com/package/@fastform/form)
+[![MIT License](https://img.shields.io/github/license/oslabs-beta/fastform)](https://github.com/oslabs-beta/FastForm/blob/dev/LICENSE)
 [![Downloads](https://img.shields.io/npm/dt/@fastform/form?color=skyblue)](https://www.npmjs.com/package/@fastform/form)
-[![Forks](https://img.shields.io/github/forks/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm)
-[![Stars](https://img.shields.io/github/stars/oslabs-beta/fastform?color=skyblue)](https://github.com/oslabs-beta/FastForm)
+[![Forks](https://img.shields.io/github/forks/oslabs-beta/fastform)](https://github.com/oslabs-beta/FastForm)
+[![Stars](https://img.shields.io/github/stars/oslabs-beta/fastform)](https://github.com/oslabs-beta/FastForm)
 
 
 
