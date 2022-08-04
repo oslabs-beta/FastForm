@@ -5,6 +5,8 @@
   export let name:string
   export let handleOnBlur:()=>void
   export let handleOnChange:()=>void
+
+  $formStore.values[name] ??= ''
 </script>
 
 {#each values as value }

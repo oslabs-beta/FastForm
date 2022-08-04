@@ -3,6 +3,8 @@
 
   export let values:string[]
   export let name:string
+
+  $formStore.values[name] ??= []
 </script>
 
 {#each values as value}
