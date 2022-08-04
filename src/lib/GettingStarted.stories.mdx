@@ -1,40 +1,41 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import FastForm from './FastForm/FastForm.svelte';
 
+
 <Meta title="Getting Started" component={FastForm} />
 
 # Getting Started 
 
 FastForm is a form component library designed specifically for Svelte that includes different base components and various validator logic. FastForm's components come with no styling to allow developers more customization over the look of their applications.
 
-FastForm is available as an npm package. You can install it by running the following command in the terminal within your project directory: 
+FastForm is available as an [npm package](https://www.npmjs.com/package/@fastform/form). You can install it by running the following command in the terminal within your project directory: 
 
 ## Installation and Imports 
 You can import FastForm onto your application using the following command. 
 ```bash
 npm install @fastform/form 
 ```
-Example for the Field component: 
+Example for the [Field](?path=/docs/field-field--page) component: 
 ```jsx
 import { FastForm, Field } from '@fastform/form';
 ```
 
 ## How It Works
 
-FastForm comes with a store along with predefined validators. Refer to the examples in the documentation for more details on each validator. Developers have the ability to create their own custom validator functions to pass onto components. Refer to the 'Validators' section for more details.  
+FastForm comes with a store along with predefined validators. Developers have the ability to create their own custom validator functions to pass onto components. Refer to the [Validators](?path=/docs/validators-validators--page) section for more details on each validator.  
 
 Here is how FastForm works: 
 <img src='../../fastform-demo.gif'/>
 
 In this demo, both the value and errors object is displayed below the fields. We can see the following occurred: 
 
-* The first name field was left blank, which triggered an error for the 'required' validator. 
-* The first name field did not match our other name field with name 'John Doe', triggering an error for the 'mustMatch' validator. 
-* No options were checked for the ice cream field, triggering an error for the 'minNumOptions' validator. 
+* The first name field was left blank, which triggered an error for the ['required'](?path=/story/validators-examples--required) validator. 
+* The first name field did not match our other name field with name 'John Doe', triggering an error for the ['mustMatch'](?path=/story/validators-examples--must-match) validator. 
+* No options were checked for the ice cream field, triggering an error for the ['minNumOptions'](?path=/story/validators-examples--min-num-options) validator. 
 
 Once each validator's conditions were met, the errors were cleared. 
 
-In the code snippet below, our Field components for both names and icecream are within our FastForm component. FastForm takes in initial values, a handleSubmit function, and validator functions. 
+In the code snippet below, our [Field](?path=/story/field-field--page) components for both names and icecream are within our [FastForm](?path=/story/fastform-example--page) component. FastForm takes in initial values, a handleSubmit function, and validator functions. 
 
 We can see the mustMatch validator is being passed onto both name fields, the minNumOptions validator on the icecream field, and the required validator on the first name field. More details on the components and validators can be found in the examples. 
 
