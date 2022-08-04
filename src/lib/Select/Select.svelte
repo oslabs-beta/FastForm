@@ -9,11 +9,9 @@
 
 
 <select bind:value={$formStore.values[name]} name={name} on:blur={handleOnBlur} on:input={handleOnChange}>
-
  {#each values as value, i}
- 
- <option value={value}>
+  <option value={value}>
     {value}
-</option>
-{/each}
+	</option>
+ {/each}
 </select>

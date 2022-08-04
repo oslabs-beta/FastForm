@@ -9,7 +9,7 @@
   $formStore.values[name] ??= ''
 </script>
 
-{#each values as value }
+{#each values as value}
   <input type="radio" name={name} value={value} bind:group={$formStore.values[name]} on:blur={handleOnBlur} on:input={handleOnChange}>
   <label for={value}>{value}</label>
 {/each}

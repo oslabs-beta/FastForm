@@ -11,7 +11,7 @@
   export let handleOnBlur:()=>void
   export let handleOnChange:()=>void
 
-  $formStore.values[name] ??= '';
+  $formStore.values[name] ??= ''
   //selects the input type
   function setType(node:node) {
     node.type = type
