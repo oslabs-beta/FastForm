@@ -1,6 +1,6 @@
 {
   "name": "@fastform/form",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

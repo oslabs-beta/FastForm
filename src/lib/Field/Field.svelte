@@ -57,14 +57,7 @@
     //Check if validate is a function, and will only run validate if it's passed in as a function
     //This is the default validation method unless specified not required.
     if (validateOnBlur){
-      $formStore.errors = {}
-      validate({
-        required: formStore.required,
-        mustMatch: formStore.mustMatch,
-        minNumOptions: formStore.minNumOptions,
-        maxNumOptions: formStore.maxNumOptions,
-        customValidator: formStore.customValidator
-      })
+      invokeValidate()
     }
     handleBlur($formStore)
   }
@@ -72,16 +65,21 @@
   //the function validates each time as the input changes
   function handleOnChange(){
     if (validateOnChange){
-      $formStore.errors = {}
-      validate({
-        required: formStore.required,
-        mustMatch: formStore.mustMatch,
-        minNumOptions: formStore.minNumOptions,
-        maxNumOptions: formStore.maxNumOptions,
-        customValidator: formStore.customValidator
-      })
+      invokeValidate()
     }
     handleChange($formStore)
+  }
+
+  function invokeValidate() {
+    $formStore.errors = {}
+    validate({
+      required: formStore.required,
+      mustMatch: formStore.mustMatch,
+      minNumOptions: formStore.minNumOptions,
+      maxNumOptions: formStore.maxNumOptions,
+      customValidator: formStore.customValidator
+    })
+      
   }
 </script>
 
