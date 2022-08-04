@@ -12,8 +12,8 @@ import FastForm from '../FastForm/FastForm.svelte'
 
 You have been warned! 
 Please refer to the following documentations that may help you write the `<Field />` component.
-- FastForm documentation
-- How to write validations
+- [FastForm documentation](?path=/story/fastform-fastform--page)
+- [How to write validations](?path=/story/validators-validators--page)
 
 ## How to use `<Field />`
 
@@ -32,13 +32,16 @@ Please refer to the following documentations that may help you write the `<Field
 
 
 ## Types of Field 
+
+The types of the input field needs to be passed in to the `type` prop. You can pass it in like how you would specify in an HTML `<input />` field. But there are some special cases. 
+
 | Types | Values Type | Example |
 | --- | --- | --- |
 | Regular types | - | `<Field name='password' type='password' />`|
 | [multiselect](?path=/story/field-multi-select--multi-select)** | Array | `<Field name='fruits' type='multiselect' values={['Apple', 'Orange', 'Peach']} />` | 
-| radio** | Array | `<Field name='desserts' type='radio' values= {['Cake', 'Doughnut', 'Ice Cream']} />` | 
-| select** | Array | `<Field name='vegetables' type = 'multiselect' values = {['Brocolli', 'Kale', 'Asparagus']} />` |
-| checkbox** | Array | `<Field name='drinks' type='multiselect' values={['Soda', 'Beer', 'Juice']} />` |
+| [radio](?path=/story/field-radio--radio)** | Array | `<Field name='desserts' type='radio' values= {['Cake', 'Doughnut', 'Ice Cream']} />` | 
+| [select](?path=/story/field-select--select)** | Array | `<Field name='vegetables' type = 'multiselect' values = {['Brocolli', 'Kale', 'Asparagus']} />` |
+| [checkbox](?path=/story/field-checkbox--checkbox)** | Array | `<Field name='drinks' type='multiselect' values={['Soda', 'Beer', 'Juice']} />` |
 ** Special input type that also require `values` prop to be passed in.
 ## Examples
 
