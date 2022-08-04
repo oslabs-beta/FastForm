@@ -46,8 +46,5 @@
     "./FastForm.svelte": "./FastForm/FastForm.svelte",
     "./Field.svelte": "./Field/Field.svelte"
   },
-  "type": "module",
-  "dependencies": {
-    "storybook": "^6.5.9"
-  }
+  "type": "module"
 }
