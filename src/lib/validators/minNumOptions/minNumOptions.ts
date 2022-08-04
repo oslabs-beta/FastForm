@@ -6,7 +6,7 @@ export default function minNumOptions(field : string, min : number, store : form
   }
   if (store.values[field].length < min) {
     store.errors[field] ??= {}
-    store.errors[field]['minNumOptions'] = `Error: Must be at least ${min} number of items.`
+    store.errors[field]['minNumOptions'] = `Error: Minimum of ${min} items must be selected.`
   }
   return store
 }

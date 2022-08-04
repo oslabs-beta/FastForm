@@ -11,11 +11,9 @@ $formStore.values[name] ??= []
 </script>
 
 <select bind:value={$formStore.values[name]} name={name} on:blur={handleOnBlur} on:input={handleOnChange} multiple>
-
-    {#each values as value, i}
- 
-    <option value={value}>
-       {value}
-   </option>
-   {/each}
+  {#each values as value, i}
+  	<option value={value}>
+    	{value}
+  	</option>
+  {/each}
 </select>

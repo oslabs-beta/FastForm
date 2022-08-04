@@ -6,7 +6,7 @@ export default function maxNumOptions(field : string, max : number, store : form
   }
   if (store.values[field].length > max) {
     store.errors[field] ??= {}
-    store.errors[field]['maxNumOptions'] = 'Error. Maximum number of options has exceeded'
+    store.errors[field]['maxNumOptions'] = 'Error: Maximum number of options has exceeded.'
   }
   return store
 }
