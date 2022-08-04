@@ -7,7 +7,7 @@
 </script>
 
 <Meta
-  title="Validators/Examples"
+  title="Validators/minNumOptions"
   argTypes={{
     handleSubmit: { control: false},
     validate: { control: false }
@@ -23,7 +23,7 @@
   validate={({minNumOptions}) => {
     minNumOptions('icecream', args.min)
   }}>
-    <Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate', 'Cookies \'N Cream']} />
+    <Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate', 'Cookies N Cream']} />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>

@@ -4,9 +4,9 @@
    
     //props for FastForm component
     //set default values for validate and handleSubmit to be empty functions 
-    export let initValues: initValue
-    export let validate: validate = () =>{} 
-    export let handleSubmit: handleSubmit = () => {}
+    export let initValues: initValue = {};
+    export let validate: validate = () =>{}; 
+    export let handleSubmit: handleSubmit = () => {};
     
     $formStore.values = {...initValues}
 

@@ -1,0 +1,107 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title='Validators/Validators' />
+
+# Validators
+Validation can happen at both the form-level and field-level. Both our `<FastForm />` and `<Field />` components can take in a `validate` prop.
+- Form-level - This type of validation runs from the `validate` prop in the `<FastForm />` component. It will trigger directly before `handleSubmit`
+- Field-level - This type of validation runsfrom the `validate` prop in the `<Field />` component. It can trigger `onChange`, `onBlur`, or both!
+
+
+### [`required(name: string)`](?path=/story/validators-required--required)
+Indicates that the given field is required.
+- `name`: Name of the required field.
+
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({required}) {
+	required('name')
+}
+</script>
+
+<FastForm validate={formValidation}>
+    <Field name='name' type='text' />
+    <button type='submit'>Submit</button>
+</FastForm>
+```
+
+### [`mustMatch(name: string, nameToMatch: string)`](?path=/story/validators-mustmatch--must-match)
+Indicates that two fields must have the same value.
+- `name`: Name of one of the fields (The error will be listed under this label).
+- `nametoMatch`: Name of the other field.
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({mustMatch}) {
+	mustMatch('email', 'confirmEmail')
+}
+</script>
+
+<FastForm validate={formValidation}>
+  <Field name='email' type='text' />
+	<Field name='confirmEmail' type='text' />
+  <button type='submit'>Submit</button>
+</FastForm>
+```
+
+### [`minNumOptions(name: string, min: number)`](?path=/story/validators-minnumoptions--min-num-options)
+For fields that can have multiple selected values (i.e. checkboxes), this validator determines the minimum number of options that the user must fill out.
+- `name`: Name of the field.
+- `min`: Minimum number of selected options.
+
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({minNumOptions}) {
+	minNumOptions('icecream', 1) //1 option must be selected.
+}
+</script>
+
+<FastForm validate={formValidation}>
+  <Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate', 'Cookies N Cream']} />
+</FastForm>
+```
+### [`maxNumOptions(name: string, max: number)`](?path=/story/validators-maxnumoptions--max-num-options)
+For fields that can have multiple selected values (i.e. checkboxes), this validator determines the maximum number of options that the user can fill out.
+- `name`: Name of the field.
+- `max`: Maximum number of selected options.
+
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({maxNumOptions}) {
+  maxNumOptions('icecream', 2) //2 options at most can be selected.
+}
+</script>
+
+<FastForm validate={formValidation}>
+	<Field name='icecream' type='checkbox'values={['Vanilla', 'Chocolate', 'Cookies N Cream']} />
+</FastForm>
+```
+### `customValidator(validator: ({values, errors}) => {values, errors})`
+The custom validator is for any validation that cannnot be handled by the prewritten validation functions.
+- `validator`: A function that will have an object with `values` and `errors` as properties be passed in as an argument. These objects can be mutated during the function to add errors to the `errors` object. The function must return these objects.
+
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({customValidator}) {
+	customValidator(({values, errors}) => {
+		if (values.password !== 'Secret') {
+			errors.incorrectPassword = true
+		}
+	return {values, errors}
+	})
+}
+</script>
+
+<FastForm validate={formValidation}>
+	<Field name='password' type='password' />
+</FastForm>
+```
