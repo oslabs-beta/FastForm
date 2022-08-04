@@ -6,4 +6,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Introduction', 'FastForm', 'Field', 'Validators', 'More Information'],
+      locals: 'en-US'
+    }
+  }
 }
