@@ -2,17 +2,17 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import FastForm from './FastForm.svelte'
 
 
-<Meta title="Fastform/FastForm" component={FastForm} />
+<Meta title="Fastform/FastFormDoc" component={FastForm} />
 
-# &lt; FastForm /&gt;
+# FastForm
 
-`FastForm` is a necessary component that eases the process of creating a form. The event handlers are passed down as props within the `FastForm` component.
+`<FastForm/>` is a necessary component that eases the process of creating a form. The event handlers are passed down as props within the `FastForm` component.
 
 ### Getting Started/Using FastForm Component
 
-1.Declare your `<FastForm>` component within your markup section of your current component <br />
+1.Declare your `<FastForm/>` component within your markup section of your current component <br />
 
-2.Add initValues, handleSubmit, and validators as functions within the props of `<FastForm>` <br />
+2.Add initValues, handleSubmit, and validators as functions within the props of `<FastForm/>` <br />
 (You can declare the functions within the script tag or inline)
 
 ### Example
@@ -22,31 +22,30 @@ import FastForm from './FastForm.svelte'
   
 
   const initValues = {
-    //names of fields and their initial values
+    // Names of fields and their initial values
   }
   
   function handleSubmit( { values, errors } ) {
-    //declare what your formObject will do with values and errors upon submitting
+    // Declare what your formObject will do with values and errors upon submitting
   }
 
   function validate({ required, mustMatch, minNumOptions, maxNumOptions, customValidators }) {
-    //invoke form validation functions for the desired fields  
+    // Invoke form validation functions for the desired fields  
   }
 
 </script>
 
-//Setting your FastForm component in the markup section with children
+// Setting your FastForm component in the markup section with children
 <FastForm initValues = {initValues} handleSubmit={handleSubmit} validate={validate}>
-  <Field /*enter input type and desired props here*/ />
-  <Field /*enter input type and desired props here*/ />
+  // The children of FastForm would be placed here
 </FastForm>
 ```
 
 
-### Properties
+### Props
 
 | Name | Required| Type | Default | Description |
 |------|:-------:|------| :-----: |-------------|
 |initValues| No |Object | - | Object that declares the inital values of the Fields as [name:value] pairs 
-|handleSubmit| No | Function| - | Defines what the form will do upon submit
-|validate| No | Function | - | [Validation page](?path=/docs/some--id)
+|handleSubmit| No | Function| - | Function that defines what the form will do  onSubmit. It takes one input which will be form state. Form state is a object which contains two objects labeled: values and errors.
+|validate| No | Function | - | [Validation page](?path=/docs/validators-validators--page)
