@@ -7,7 +7,7 @@
 </script>
 
 <Meta
-  title="Validators/Examples"
+  title="Validators/mustMatch"
   argTypes={{
     handleSubmit: { control: false},
     validate: { control: false }
@@ -15,16 +15,16 @@
 />
 
 <Story name='mustMatch'>
-  <FastForm initValues={{ name: '', name2: '' }}
+  <FastForm initValues={{ email: '', confirmEmail: '' }}
     handleSubmit={({values, errors}) => {
     myValues = values
     myErrors = errors
   }}
   validate={({mustMatch}) => {
-    mustMatch('name', 'name2')
+    mustMatch('email', 'confirmEmail')
   }}>
-    <Field name='name' type='text' placeholder='Enter Text Here'/>
-    <Field name='name2' type='text' placeholder='Enter Text Here'/>
+    <Field name='email' type='text' placeholder='Email'/>
+    <Field name='confirmEmail' type='text' placeholder='Confirm Email'/>
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>
