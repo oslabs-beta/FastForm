@@ -8,7 +8,7 @@
 
 
 <Meta
-  title="FastForm/Examples"
+  title="Fastform/FastForm"
   component={FastForm}
   argTypes={{
     handleSubmit: { control: false},
@@ -18,7 +18,13 @@
 
 
 <Template let:args>
-  <FastForm {...args} 
+  <FastForm initValues= {args.initValues}
+  validate={({required, mustMatch, minNumOptions, maxNumOptions}) => {
+    args.nameRequired ? required('name') : null
+    args.emailsMustMatch ? mustMatch('confirmEmail', 'email') : null
+    minNumOptions('icecream', args.minIcecreamChoices)
+    maxNumOptions('icecream', args.maxIcecreamChoices)
+  }}
   handleSubmit={({values, errors}) => {
     myValues = values
     myErrors = errors
@@ -27,6 +33,8 @@
     <Field name='name' type='text' autocomplete='off' placeholder='Name' />
     <Field name='email' type='text' autocomplete='off'placeholder='Email' />
     <Field name='confirmEmail' type='text' autocomplete='off' placeholder='Confirm Email' />
+    <br/>
+    <Field name='icecream' type='checkbox' values={args.values} />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>
@@ -36,40 +44,19 @@
 
 
 <Story
-  name="No Validation"
+  id="example"
+  name="FastForm"
   args={{
     initValues: {
       name: '',
       email: '',
-      confirmEmail: ''
-    }
-  }}
-/>
-
-<Story
-  name="Name Required"
-  args={{
-    initValues: {
-      name: '',
-      email: '',
-      confirmEmail: ''
+      confirmEmail: '',
+      icecream: []
     },
-    validate: ({required}) => {
-      required('name')
-    }
-  }}
-/>
-
-<Story
-  name="Emails Must Match"
-  args={{
-    initValues: {
-      name: '',
-      email: '',
-      confirmEmail: ''
-    },
-    validate: ({mustMatch}) => {
-      mustMatch('confirmEmail', 'email')
-    }
+    values: ['Vanilla', 'Chocolate', 'Cookies \'N Cream'],
+    nameRequired: false,
+    emailsMustMatch: false,
+    minIcecreamChoices: 0,
+    maxIcecreamChoices: 3
   }}
 />

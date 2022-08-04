@@ -10,6 +10,8 @@
   export let name:string  
   export let handleOnBlur:()=>void
   export let handleOnChange:()=>void
+
+  $formStore.values[name] ??= '';
   //selects the input type
   function setType(node:node) {
     node.type = type

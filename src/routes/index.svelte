@@ -6,8 +6,8 @@
   const initValues = {
     name: '',
     name2: 'Angel',
-    icecream: [],
-    cars: []
+    icecream: ['Chocolate','Vanilla'],
+    cars: ['Audi']
   }
   
   function handleSubmit(values) {
@@ -16,7 +16,7 @@
 </script>
 
 <FastForm 
-initValues={initValues} 
+initValues={initValues}
 handleSubmit={handleSubmit}
 validate = {({values, errors, required, mustMatch, minNumOptions, maxNumOptions, customValidator}) => {
   mustMatch('name', 'name2')
