@@ -1,0 +1,63 @@
+### `required(name: string)`
+- `name`: Name of the required field.
+### `mustMatch(name: string, nameToMatch: string)`
+- `name`: Name of one of the fields (The error will be listed under this label).
+- `nametoMatch`: Name of the other field.
+### `minNumOptions(name: string, min: number)`
+- `name`: Name of the field.
+- `min`: Minimum number of selected options.
+
+For fields that can have multiple selected values (i.e. checkboxes), this validator determines the minimum number of options that the user must fill out.
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({minNumOptions}) {
+minNumOptions('icecream', 1) //1 option must be selected.
+}
+</script>
+
+<FastForm validate={formValidation}>
+<Field name='icecream' type='checkbox' values={['Vanilla', 'Chocolate']} />
+</FastForm>
+```
+### `maxNumOptions(name: string, max: number)`
+- `name`: Name of the field.
+- `max`: Maximum number of selected options.
+
+For fields that can have multiple selected values (i.e. checkboxes), this validator determines the maximum number of options that the user can fill out.
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({maxNumOptions}) {
+maxNumOptions('icecream', 1) //1 option at most can be selected.
+}
+</script>
+
+<FastForm validate={formValidation}>
+<Field name='icecream' type='checkbox'values={['Vanilla', 'Chocolate']} />
+</FastForm>
+```
+### `customValidator(validator: ({values, errors}) => {values, errors})`
+- `validator`: A function that will have an object with `values` and `errors` as properties be passed in as an argument. These objects can be mutated during the function to add errors to the `errors` object. The function must return these objects.
+
+The custom validator is for any validation that can't be handled by our other validators.
+```jsx
+<script>
+import { FastForm, Field } from '@fastform/form'
+
+function formValidation({customValidator}) {
+customValidator(({values, errors}) => {
+if (values.password !== 'Secret') {
+errors.incorrectPassword = true
+}
+return {values, errors}
+})
+}
+</script>
+
+<FastForm validate={formValidation}>
+<Field name='password' type='password' />
+</FastForm>
+```
