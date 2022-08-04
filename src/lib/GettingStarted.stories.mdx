@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import FastForm from './FastForm/FastForm.svelte';
+import gif from '../../fastform-demo.gif'
 
 
 <Meta title="Getting Started" component={FastForm} />
@@ -25,7 +26,7 @@ import { FastForm, Field } from '@fastform/form';
 FastForm comes with a store along with predefined validators. Developers have the ability to create their own custom validator functions to pass onto components. Refer to the [Validators](?path=/docs/validators-validators--page) section for more details on each validator.  
 
 Here is how FastForm works: 
-<img src='../../fastform-demo.gif'/>
+<img src={gif}/>
 
 In this demo, both the value and errors object is displayed below the fields. We can see the following occurred: 
 
