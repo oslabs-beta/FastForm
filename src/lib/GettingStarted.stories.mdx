@@ -30,13 +30,13 @@ Here is how FastForm works:
 
 In this demo, both the value and errors object is displayed below the fields. We can see the following occurred: 
 
-* The first name field was left blank, which triggered an error for the ['required'](?path=/story/validators-examples--required) validator. 
-* The first name field did not match our other name field with name 'John Doe', triggering an error for the ['mustMatch'](?path=/story/validators-examples--must-match) validator. 
-* No options were checked for the ice cream field, triggering an error for the ['minNumOptions'](?path=/story/validators-examples--min-num-options) validator. 
+* The first name field was left blank, which triggered an error for the ['required'](?path=/story/validators-required--required) validator. 
+* The first name field did not match our other name field with name 'John Doe', triggering an error for the ['mustMatch'](?path=/story/validators-mustmatch--must-match) validator. 
+* No options were checked for the ice cream field, triggering an error for the ['minNumOptions'](?path=/story/validators-minnumoptions--min-num-options) validator. 
 
 Once each validator's conditions were met, the errors were cleared. 
 
-In the code snippet below, our [Field](?path=/story/field-field--page) components for both names and icecream are within our [FastForm](?path=/story/fastform-example--page) component. FastForm takes in initial values, a handleSubmit function, and validator functions. 
+In the code snippet below, our [Field](?path=/story/field-field--page) components for both names and icecream are within our [FastForm](?path=/story/fastform-fastform--page) component. FastForm takes in initial values, a handleSubmit function, and validator functions. 
 
 We can see the mustMatch validator is being passed onto both name fields, the minNumOptions validator on the icecream field, and the required validator on the first name field. More details on the components and validators can be found in the examples. 
 
