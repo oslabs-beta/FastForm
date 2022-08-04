@@ -5,6 +5,7 @@ module.exports = {
     preprocess: sveltePreprocess(),
   },
   "stories": [
+    "../src/lib/GettingStarted.stories.mdx",
     "../src/**/*.stories.mdx",
     "../src/lib/**/*.stories.svelte"
   ],
