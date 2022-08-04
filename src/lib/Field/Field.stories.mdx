@@ -5,7 +5,9 @@ import FastForm from '../FastForm/FastForm.svelte'
 
 <Meta title="Field/Field" component={FastForm} />
 
-# `Field`
+# Field
+
+
 
 ## Before we begin
 `<Field />` is meant for selecting input types. The type of input must be specified, and you really need to wrap this within `<FastForm />` in order for us to manage your state. 
@@ -24,9 +26,9 @@ Please refer to the following documentations that may help you write the `<Field
 | **name** | **Yes** | String | - | Name for the is specific field |
 | **type** | **Yes** | String | - | Specify the type of input field |
 | **values** | **Yes*** | Array | - | Values required for specific components. *See Types of Field Table for special types
-| **handleBlur** | No | Function | - | Instructions to be run onBlur, this function will trigger after validate function |
-| **handleChange** | No | Function | - | Instructions to be run OnChange, this function will trigger after validate function|
-| **validate** | No | Function | - | Any validators that is required to validate the `<Field />` component. Refer to validator docs on how to write your own validations|
+| **handleBlur** | No | Function | - | Instructions to be run onBlur, this function takes in an object that contains *`values`*, and *`errors`* object, and will trigger after validate function |
+| **handleChange** | No | Function | - | Instructions to be run OnChange, this function takes in an object that contains *`values`*, and *`errors`* object, and will trigger after validate function|
+| **validate** | No | Function | - | Any validators that is required to validate the *`<Field />`* component. Refer to validator docs on how to write your own validations|
 | **validateOnBlur** | No | Boolean | `true` | Passed in validate function will run onBlur|
 | **validateOnChange** | No | Boolean | `!validateOnBlur` | Passed in validate function will run onChange |
 
@@ -50,12 +52,16 @@ Below is an example of a creating a checkbox component using vanilla Svelte.
 <script>
   const iceCreamSelection = ['Seaseme', 'Vanilla', 'Chocolate'];
   let fruitSelection = [];
+  function handleBlur(){
+    //handleBlur instructions here
+  }
 </script>
-
+<input name='orderName' type='text' />
 {#each iceCreamSelection as option}
-  <input type='checkbox' value={option} bind:group={fruitSelection}/>
+  <input type='checkbox' value={option} bind:group={fruitSelection} onBlur={handleBlur} />
   <label for='selectFruit'>{option}</label>
 {/each}
+<button type='submit'>Submit!</button>
 ```
 
 In comparison, below is an example if you were to write this using FastForm.
@@ -65,10 +71,15 @@ In comparison, below is an example if you were to write this using FastForm.
   const initValues = {
     iceCreamSelection: [];
   };
+  function handleChange({values, errors}){
+    //handleBlur instructions here
+  }
 </script>
 
 <FastForm>
-  <Field name='iceCreamSelection' type="checkbox" values={['Seaseme', 'Vanilla', 'Chocolate']}/>
+  <Field name='orderName' type='text' handleChange={handleChange} />
+  <Field name='iceCreamSelection' type="checkbox" values={['Seaseme', 'Vanilla', 'Chocolate']} />
+  <button type='submit'>Submit!</button>
 </FastForm>
 ```
 
