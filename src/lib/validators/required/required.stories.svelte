@@ -7,7 +7,7 @@
 </script>
 
 <Meta
-  title="Validators/Examples"
+  title="Validators/required"
   argTypes={{
     handleSubmit: { control: false},
     validate: { control: false }
