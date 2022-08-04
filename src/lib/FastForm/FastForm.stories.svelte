@@ -8,7 +8,7 @@
 
 
 <Meta
-  title="Fastform/FastForm"
+  title="FastForm/FastForm"
   component={FastForm}
   argTypes={{
     handleSubmit: { control: false},
@@ -45,7 +45,7 @@
 
 <Story
   id="example"
-  name="FastForm"
+  name='FastForm'
   args={{
     initValues: {
       name: '',
