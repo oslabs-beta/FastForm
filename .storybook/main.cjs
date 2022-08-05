@@ -1,21 +1,29 @@
+const sveltePreprocess = require('svelte-preprocess');
+
 module.exports = {
+  svelteOptions: {
+    preprocess: sveltePreprocess(),
+  },
   "stories": [
     "../src/**/*.stories.mdx",
-    "../src/lib/**/*.stories.svelte"
+    "../src/lib/**/*.stories.svelte",
   ],
   "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    "@storybook/addon-links",{
+    name: "@storybook/addon-essentials",
+    options: {
+      viewport: false,
+      measure: false,
+      backgrounds: false,
+      outline: false
+    }
+  },
     "@storybook/addon-svelte-csf"
   ],
   "framework": "@storybook/svelte",
   "core": {
     "builder": "@storybook/builder-vite"
   },
-  // "svelteOptions": {
-  //   "preprocess": require("../svelte.config.js").preprocess
-  // },
   "features": {
     "storyStoreV7": false
   }
