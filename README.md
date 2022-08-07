@@ -17,7 +17,7 @@
 
 FastForm is a form component library designed for Svelte that includes different base components and various validator logic. FastForm's components come with no styling to allow developers more customization over the look of their applications.   
 
-[🐍 Getting Started](https://getfastform.io/?path=/story/fastform-getting-started--page) | [📕 Documentation](https://getfastform.io) |  [📰 Medium](https://medium.com/@steven.yuan91/30838499b1d6)
+[🐍 Getting Started](https://getfastform.io/) | [📕 Documentation](https://getfastform.io) |  [📰 Medium](https://medium.com/@steven.yuan91/30838499b1d6)
 
 ## Key Features
 * **Ease of Use:** Getting started with FastForm is simple. Visit our documentation website for a guide on the different components and form logic used.

@@ -44,7 +44,7 @@ export type validateType = {
 }
 //FastForm.svelte variable types
 export type validate = (input: validateType) => void;
-export type handleSubmit = (userInput: formStoreValueType) => void;
+export type eventHandler = (userInput: formStoreValueType) => void;
 export type initValue = {
   [key: string]: any
 }
