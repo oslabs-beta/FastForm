@@ -15,6 +15,10 @@
       handleChange($formStore)
     }
 
+    function onVerify() {
+      console.log('verifying')
+    }
+
     //on submit, run the validator function first before running the handleSubmit;
     function onSubmit(){
       //When a validator function is passed in, run the validator function;
