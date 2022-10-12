@@ -6,8 +6,6 @@
     export let handleOnChange:()=>void
 </script>
 
-
-
 <select bind:value={$formStore.values[name]} name={name} on:blur={handleOnBlur} on:input={handleOnChange}>
  {#each values as value, i}
   <option value={value}>
