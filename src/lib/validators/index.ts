@@ -6,6 +6,7 @@ import verifyEmail from './verifyEmail/verifyEmail'
 import isNumber from './isNumber/isNumber'
 import isDate from './isDate/isDate'
 import isInRange from './isInRange/isInRange'
+import isPhoneNumberNA from './isPhoneNumberNA/isPhoneNumberNA'
 
 export { 
   required, 
@@ -16,4 +17,5 @@ export {
   isNumber, 
   isDate,
   isInRange,
+  isPhoneNumberNA,
  }
