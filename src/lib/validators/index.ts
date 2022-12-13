@@ -7,6 +7,8 @@ import isNumber from './isNumber/isNumber'
 import isDate from './isDate/isDate'
 import isInRange from './isInRange/isInRange'
 import isPhoneNumberNA from './isPhoneNumberNA/isPhoneNumberNA'
+import isAlpha from './isAlpha/isAlpha'
+import isURL from './isURL/isURL'
 
 export { 
   required, 
@@ -18,4 +20,6 @@ export {
   isDate,
   isInRange,
   isPhoneNumberNA,
+  isAlpha,
+  isURL
  }
