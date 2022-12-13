@@ -21,9 +21,9 @@
     myErrors = errors
   }}
   validate={({verifyEmail}) => {
-    verifyEmail('icecream', args.repeatEmail)
+    verifyEmail('email', args.repeatEmail)
   }}>
-    <Field name='icecream' type='email' values={'ilija@gmail.com'} />
+    <Field name='email' type='email' values={'ilija@gmail.com'} />
     <button type='submit'>Submit</button>
   </FastForm>
   <hr/>
