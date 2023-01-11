@@ -9,6 +9,7 @@ import isInRange from './isInRange/isInRange'
 import isPhoneNumberNA from './isPhoneNumberNA/isPhoneNumberNA'
 import isAlpha from './isAlpha/isAlpha'
 import isURL from './isURL/isURL'
+import isJSON from './isJSON/isJSON'
 
 export { 
   required, 
@@ -21,5 +22,6 @@ export {
   isInRange,
   isPhoneNumberNA,
   isAlpha,
-  isURL
+  isURL,
+  isJSON,
  }
