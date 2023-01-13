@@ -10,6 +10,7 @@ import isPhoneNumberNA from './isPhoneNumberNA/isPhoneNumberNA'
 import isAlpha from './isAlpha/isAlpha'
 import isURL from './isURL/isURL'
 import isJSON from './isJSON/isJSON'
+import isCreditCard from './isCreditCard/isCreditCard'
 
 export { 
   required, 
@@ -24,4 +25,5 @@ export {
   isAlpha,
   isURL,
   isJSON,
+  isCreditCard,
  }
