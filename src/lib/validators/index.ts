@@ -11,6 +11,7 @@ import isAlpha from './isAlpha/isAlpha'
 import isURL from './isURL/isURL'
 import isJSON from './isJSON/isJSON'
 import isCreditCard from './isCreditCard/isCreditCard'
+import isAlphaNumeric from './isAlphaNumeric/isAlphaNumeric'
 
 export { 
   required, 
@@ -26,4 +27,5 @@ export {
   isURL,
   isJSON,
   isCreditCard,
+  isAlphaNumeric
  }
