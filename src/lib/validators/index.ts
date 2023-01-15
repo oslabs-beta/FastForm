@@ -12,6 +12,7 @@ import isURL from './isURL/isURL'
 import isJSON from './isJSON/isJSON'
 import isCreditCard from './isCreditCard/isCreditCard'
 import isAlphaNumeric from './isAlphaNumeric/isAlphaNumeric'
+import isStrongPassword from './isStrongPassword/isStrongPassword'
 
 export { 
   required, 
@@ -27,5 +28,6 @@ export {
   isURL,
   isJSON,
   isCreditCard,
-  isAlphaNumeric
+  isAlphaNumeric,
+  isStrongPassword
  }
