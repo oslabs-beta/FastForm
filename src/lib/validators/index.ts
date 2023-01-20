@@ -13,6 +13,8 @@ import isJSON from './isJSON/isJSON'
 import isCreditCard from './isCreditCard/isCreditCard'
 import isAlphaNumeric from './isAlphaNumeric/isAlphaNumeric'
 import isStrongPassword from './isStrongPassword/isStrongPassword'
+import isTime from './isTime/isTime'
+import isBase64 from './isBase64/isBase64'
 
 export { 
   required, 
@@ -29,5 +31,7 @@ export {
   isJSON,
   isCreditCard,
   isAlphaNumeric,
-  isStrongPassword
+  isStrongPassword,
+  isTime,
+  isBase64,
  }
