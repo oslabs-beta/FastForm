@@ -33,6 +33,32 @@ export type formStoreType = {
   customValidator: (
     func: (store: formStoreValueType) => formStoreValueType
   ) => void
+  isAlphaNumeric: (
+    field: string,
+  ) => void
+  isBase64: (
+    field: string,
+  ) => void
+  isCreditCard: (
+    field: string,
+  ) => void
+  isDate: (
+    field: string,
+  ) => void
+  isInRange: (
+    field: number,
+    min: number,
+    max: number
+  ) => void
+  isJSON: (
+    field: string,
+  ) => void
+  isNumber: (
+    field: number,
+  ) => void
+  isPhoneNumber: (
+    field: string,
+  ) => void
 }
 
 export type validateType = {
