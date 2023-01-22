@@ -56,7 +56,19 @@ export type formStoreType = {
   isNumber: (
     field: number,
   ) => void
-  isPhoneNumber: (
+  isPhoneNumberNA: (
+    field: string,
+  ) => void
+  isStrongPassword: (
+    field: string,
+  ) => void
+  isTime: (
+    field: string,
+  ) => void
+  isURL: (
+    field: string,
+  ) => void
+  verifyEmail: (
     field: string,
   ) => void
 }
