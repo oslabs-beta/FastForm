@@ -42,8 +42,14 @@ function createFormStore() : formStoreType {
     isDate: (field) => update(store=>isDate(field, store)),
     isInRange: (field, min, max) => update(store=>isInRange(field, min, max, store)),
     isPhoneNumberNA: (field) => update(store=>isPhoneNumberNA(field, store)),
-    isAlpha: (field) => update(store=>isAlpha(field, store)),
+    // isAlpha: (field) => update(store=>isAlpha(field, store)),
     isURL: (field) => update(store=>isURL(field, store)),
+    isJSON: (field) => update(store=>isJSON(field, store)),
+    isCreditCard: (field) => update(store=>isCreditCard(field, store)),
+    isAlphaNumeric: (field) => update(store=>isAlphaNumeric(field, store)),
+    isStrongPassword: (field) => update(store=>isStrongPassword(field, store)),
+    isTime: (field) => update(store=>isTime(field, store)),
+    isBase64: (field) => update(store=>isBase64(field, store)),
   }
 }
   
