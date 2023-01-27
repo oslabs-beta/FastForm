@@ -1,6 +1,6 @@
 import type { formStoreValueType } from '../../types'
 
-export default function verifyEmail(field : string, max : number, store : formStoreValueType ) : formStoreValueType {
+export default function verifyEmail(field : string, store : formStoreValueType ) : formStoreValueType {
   if (isValidEmail(store.values[field]) === false) {
     throw new Error('Error: invalid e-mail format')
   }
