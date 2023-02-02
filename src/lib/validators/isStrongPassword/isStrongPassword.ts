@@ -8,8 +8,25 @@ export default function isStrongPassword(field : string, store: formStoreValueTy
   const hasDigit = /[0-9]/.test(field);
   const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(field);
 
-  if (field.length <= minLength && !hasUpperCase && !hasLowerCase && !hasDigit && !hasSpecialChar) {
-    store.errors[field]['isStrongPassword'] = `Error: invalid password format, please enter a new password`
-  } 
+  if (field.length < minLength) {
+    store.errors[field]['passwordLength'] = `Error: Please enter password longer than 8 characters`
+  }
+
+  if (!hasUpperCase) {
+    store.errors[field]['passwordUppercase'] = `Error: Please include an uppercase letter`
+  }
+
+  if (!hasLowerCase) {
+    store.errors[field]['passwordLowercase'] = `Error: Please include a lowercase letter`
+  }
+
+  if (!hasDigit) {
+    store.errors[field]['passwordHasDigit'] = `Error: Please include a number`
+  }
+
+  if (!hasSpecialChar) {
+    store.errors[field]['passwordSpecialChar'] = `Error: Please include a special Character !@#$%^&*()`
+  }
+
   return store
 }
