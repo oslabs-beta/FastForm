@@ -15,6 +15,7 @@ import isAlphaNumeric from './isAlphaNumeric/isAlphaNumeric'
 import isStrongPassword from './isStrongPassword/isStrongPassword'
 import isTime from './isTime/isTime'
 import isBase64 from './isBase64/isBase64'
+import isMimeType from './isMimeType/isMimeType'
 
 export { 
   required, 
@@ -34,4 +35,5 @@ export {
   isStrongPassword,
   isTime,
   isBase64,
+  isMimeType,
  }

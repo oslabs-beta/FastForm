@@ -71,6 +71,12 @@ export type formStoreType = {
   verifyEmail: (
     field: string,
   ) => void
+  isMimeType: (
+    field: string,
+  ) => void
+  isAlpha: (
+    field: string,
+  ) => void
 }
 
 export type validateType = {
@@ -80,17 +86,20 @@ export type validateType = {
   maxNumOptions: (field: string, min: number) => void,
   customValidator: (func: (store: formStoreValueType) => formStoreValueType) => void,
   isAlphaNumeric: (field: string) => void,
+  isAlpha: (field: string) => void,
   isBase64: (field: string) => void,
   isCreditCard: (field: string) => void,
   isDate: (field: string) => void,
   isInRange: (field: number, min: number, max: number) => void,
   isJSON: (field: string) => void,
   isNumber: (field: number) => void,
-  isPhoneNumberNA: (field: number) => void,
-  isStrongPassword: (field: number) => void,
-  isTime: (field: number) => void,
-  isURL: (field: number) => void,
-  verifyEmail: (field: number) => void,
+  isPhoneNumberNA: (field: string) => void,
+  isStrongPassword: (field: string) => void,
+  isTime: (field: string) => void,
+  isURL: (field: string) => void,
+  verifyEmail: (field: string) => void,
+  isMimeType: (field: string) => void,
+  
 }
 //FastForm.svelte variable types
 export type validate = (input: validateType) => void;
