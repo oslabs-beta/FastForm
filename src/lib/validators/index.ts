@@ -16,6 +16,7 @@ import isStrongPassword from './isStrongPassword/isStrongPassword'
 import isTime from './isTime/isTime'
 import isBase64 from './isBase64/isBase64'
 import isMimeType from './isMimeType/isMimeType'
+import matchesPattern from './matchesPattern/matchesPattern'
 
 export { 
   required, 
@@ -36,4 +37,5 @@ export {
   isTime,
   isBase64,
   isMimeType,
+  matchesPattern,
  }

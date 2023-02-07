@@ -18,6 +18,7 @@ import { required,
   isTime,
   isBase64,
   isMimeType,
+  matchesPattern,
  } from './validators'
 import type { formStoreType, formStoreValueType } from './types'
 
@@ -52,6 +53,7 @@ function createFormStore() : formStoreType {
     isTime: (field) => update(store=>isTime(field, store)),
     isBase64: (field) => update(store=>isBase64(field, store)),
     isMimeType: (field) => update(store=>isMimeType(field, store)),
+    matchesPattern: (field, regex) => update(store=>matchesPattern(field, regex, store)),
   }
 }
   

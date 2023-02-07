@@ -77,6 +77,10 @@ export type formStoreType = {
   isAlpha: (
     field: string,
   ) => void
+  matchesPattern: (
+    field: string,
+    regex: string
+  ) => void
 }
 
 export type validateType = {
@@ -99,6 +103,7 @@ export type validateType = {
   isURL: (field: string) => void,
   verifyEmail: (field: string) => void,
   isMimeType: (field: string) => void,
+  matchesPattern: (field: string, regex: string) => void,
   
 }
 //FastForm.svelte variable types
