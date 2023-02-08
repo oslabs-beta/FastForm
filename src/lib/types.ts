@@ -81,6 +81,10 @@ export type formStoreType = {
     field: string,
     regex: string
   ) => void
+  isFileSize: (
+    field: string,
+    maxSize: string
+  ) => void
 }
 
 export type validateType = {
@@ -104,6 +108,7 @@ export type validateType = {
   verifyEmail: (field: string) => void,
   isMimeType: (field: string) => void,
   matchesPattern: (field: string, regex: string) => void,
+  isFileSize: (field: string, maxSize: string) => void,
   
 }
 //FastForm.svelte variable types

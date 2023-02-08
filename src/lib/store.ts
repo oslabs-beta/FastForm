@@ -54,6 +54,7 @@ function createFormStore() : formStoreType {
     isBase64: (field) => update(store=>isBase64(field, store)),
     isMimeType: (field) => update(store=>isMimeType(field, store)),
     matchesPattern: (field, regex) => update(store=>matchesPattern(field, regex, store)),
+    isFileSize: (field, maxSize) => update(store=>matchesPattern(field, maxSize, store)),
   }
 }
   

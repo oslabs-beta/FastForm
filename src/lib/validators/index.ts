@@ -17,6 +17,7 @@ import isTime from './isTime/isTime'
 import isBase64 from './isBase64/isBase64'
 import isMimeType from './isMimeType/isMimeType'
 import matchesPattern from './matchesPattern/matchesPattern'
+import isFileSize from './isFileSize/isFileSize'
 
 export { 
   required, 
@@ -38,4 +39,5 @@ export {
   isBase64,
   isMimeType,
   matchesPattern,
+  isFileSize,
  }
