@@ -41,9 +41,24 @@
       mustMatch: formStore.mustMatch,
       minNumOptions: formStore.minNumOptions,
       maxNumOptions: formStore.maxNumOptions,
-      customValidator: formStore.customValidator
+      customValidator: formStore.customValidator,
+      verifyEmail: formStore.verifyEmail,
+      isNumber: formStore.isNumber,
+      isDate: formStore.isDate,
+      isInRange: formStore.isInRange,
+      isPhoneNumberNA: formStore.isPhoneNumberNA,
+      isAlpha: formStore.isAlpha,
+      isURL: formStore.isURL,
+      isJSON: formStore.isJSON,
+      isCreditCard: formStore.isCreditCard,
+      isAlphaNumeric: formStore.isAlphaNumeric,
+      isStrongPassword: formStore.isStrongPassword,
+      isTime: formStore.isTime,
+      isBase64: formStore.isBase64,
+      isMimeType: formStore.isMimeType,
+      matchesPattern: formStore.matchesPattern,
+      isFileSize: formStore.isFileSize,
     })
-      
   }
 </script>
 
